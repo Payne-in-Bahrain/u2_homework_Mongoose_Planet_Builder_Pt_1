@@ -72,5 +72,5 @@ FYI, future lessons will expand upon the `mongoose-movies` project, and the labs
 - Make sure to add some styling to your app!  Have fun with it! 
 
 
-### This is a deliverable (Parts 2 & 3 will build upon this and will be deliverables next week)
+### This is a deliverable (Parts 2 & 3 will build upon this)
  

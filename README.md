@@ -8,7 +8,7 @@ Today in the Intro to Mongoose lesson you Created and Read documents using a `Mo
 
 In this lab, you'll do the same, except you'll create and use a `Planet` model.
 
-We're going to be building an app that allows us to build our very own planets and define features of them, such as climate, population and terrain.  Later on we'll use embedded and referenced models to add additional functionality to our app, allowing users to create native plant life for our planets, as well as associate our planets with different explorers. 
+We're going to be building an app that allows us to build our very own planets and define features of them, such as name, population and climate.  Later on we'll use embedded and referenced models to add additional functionality to our app, allowing users to create native plant life for our planets, as well as associate our planets with different explorers. 
 
 You'll begin by forking and cloning this repository. Then `cd` in to that directory and follow the directions below.
 

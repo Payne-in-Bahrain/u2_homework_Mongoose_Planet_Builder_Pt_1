@@ -52,7 +52,7 @@ FYI, future lessons will expand upon the `mongoose-movies` project, and the labs
 	|---|---|---|---|
 	| `name`| `String`| Required | n/a | 
 	| `climate`| `String`| Required<br>`enum` to include<br>'Oceanic', 'Tropical', 'Arctic', 'Desert' & 'Rainforest'<br>(or your choices) | 'Desert'<br>(or your choice) |
-	| `population`| `Number`| Required<br>Between `10` and `9,999,999` | n/a | 
+	| `population`| `Number`| Required<br>Between `0` and `9,999,999` | n/a | 
 
 
 11. Implement the following User Stories:

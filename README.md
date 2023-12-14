@@ -1,4 +1,4 @@
-<img src="https://i.imgur.com/xXXnDGR.jpg" width="50%">
+<img src="https://i.imgur.com/xXXnDGR.jpg" width="60%">
  
 # Mongoose "Planet Builder" Lab - Part 1
 

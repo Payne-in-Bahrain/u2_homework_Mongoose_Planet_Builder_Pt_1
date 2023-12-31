@@ -44,7 +44,19 @@ express -e planet-builder
 
 6. Create a **config/database.js** module that connects to a database.
 
+```
+mkdir config
+```
+
+```
+touch config/database.js
+```
+
 7. Be sure to require the **config/database.js** AFTER `dotenv` in **server.js**.
+
+```
+require('./config/database'); // database
+```
 
 8. Verify that starting the Express server with `nodemon` console.logs out a successful connection to the database.
 

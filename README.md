@@ -22,6 +22,10 @@ FYI, future lessons will expand upon the `mongoose-movies` project, and the labs
 
 1. Use express generator to create a `mongoose-planets` project. Be sure to install the Node modules after you `cd` into the project by running the command `npm i`. 
 
+```
+express -e planet-builder
+```
+
 2. Rename **app.js** to **server.js** and make the necessary change inside of `bin/www`.
 
 3. Install the `dotenv` module and

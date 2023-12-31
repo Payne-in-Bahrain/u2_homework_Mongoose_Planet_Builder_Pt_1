@@ -77,7 +77,7 @@ require('./config/database'); // database
 
 9. Optionally set up template partials.
 
-10. Create a `Planet` Model with the following properties:
+10. Create a `Planet` Model inside of a models folder with the following properties:
 
 	| Property | Type | Validations | Default Value |
 	|---|---|---|---|
@@ -85,6 +85,7 @@ require('./config/database'); // database
 	| `climate`| `String`| Required<br>`enum` to include<br>'Oceanic', 'Tropical', 'Arctic', 'Desert' & 'Rainforest'<br>(or your choices) | 'Desert'<br>(or your choice) |
 	| `population`| `Number`| Required<br>Between `0` and `9,999,999` | n/a | 
 
+*Remeber to name your model in the singular `planet.js`*
 
 11. Implement the following User Stories:
 	

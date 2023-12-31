@@ -73,7 +73,7 @@ db.on('connected', () => {
 require('./config/database'); // database
 ```
 
-8. Verify that starting the Express server with `nodemon` console.logs out a successful connection to the database.
+8. Install Mongoose with `npm i mongoose` and verify that starting the Express server with `nodemon` console.logs out a successful connection to the database.
 
 9. Optionally set up template partials.
 

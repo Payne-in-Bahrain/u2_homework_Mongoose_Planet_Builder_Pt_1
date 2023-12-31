@@ -28,7 +28,7 @@ express -e planet-builder
 
 2. Rename **app.js** to **server.js** and make the necessary change inside of `bin/www`.
 
-3. Install the `dotenv` module and
+3. Install the `dotenv` module by entering `npm i dotenv` into the CLI and
 
     ```js
     // server.js

@@ -14,7 +14,7 @@ You'll begin by forking and cloning this repository. Then `cd` in to that direct
 
 FYI, future lessons will expand upon the `mongoose-movies` project, and the labs will expand upon the `mongoose-planet-builder` project!
 
-#### Each part of  `planet-builder` (parts 1 thru 3) will be a deliverable and you will make a pull request each time to this same repo to submit each part.
+#### Each part of  `planet-builder` (parts 1 thru 3) will be a deliverable.  No need to make a new pull request each time though. 
 
 ## Exercises
 

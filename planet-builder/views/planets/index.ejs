@@ -1,0 +1,25 @@
+<%- include('../partials/header.ejs') %>
+
+<h2>Movie List</h2>
+<table>
+  <thead>
+    <tr class="display">
+      <th>Planet Name</th>
+      <th>Planet Radius</th>
+      <th>Civilization</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% planets.forEach(m=>{ %>
+
+    <tr class="display">
+      <td><%= m.planetName %></td>
+      <td><%= m.planetRadius %></td>
+      <td><%= m.civilization %></td>
+      <%})%>
+      <!-- Close the forEach using EJS here -->
+    </tr>
+  </tbody>
+</table>
+
+<%- include('../partials/footer.ejs') %>

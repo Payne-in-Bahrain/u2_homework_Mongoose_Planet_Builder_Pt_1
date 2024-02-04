@@ -1,0 +1,19 @@
+<%- include('../partials/header.ejs') %>
+
+<h1>NEW NEW NEW NEW PLANET</h1>
+<form action="/planets" method="POST">
+  <label>Planet Name: <input type="text" name="planetName" /> </label><br />
+  <label>Planet Radius: <input type="number" name="planetRadius" /> </label
+  ><br />
+  <label
+    >Civilization
+    <select name="civilization">
+      <option value="Arabia">Arabia</option>
+      <option value="Roman">Roman</option>
+      <option value="Aztec">Aztec</option>
+      <option value="Spartian">Spartian</option>
+    </select> </label
+  ><br />
+  <button type="submit">Create Planet</button>
+</form>
+<%- include('../partials/footer.ejs') %>

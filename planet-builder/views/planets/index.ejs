@@ -1,0 +1,31 @@
+<%- include('../partials/header') %>
+
+<h2>Planet List</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Climate</th>
+      <th>Population</th>
+      <th>Aliens</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Write the line of EJS to iterate over movies using forEach -->
+    <% planets.forEach((m)=>{ %>
+
+      
+  
+      <tr>
+        <td><%= m.name %></td>
+        <td><%= m.climate %></td>
+        <td><%= m.population %></td>
+                  
+        <td><%= m.aliens ? "yes":"Nope" %></td>
+      </tr>
+      
+      <% })%>
+  </tbody>
+</table>
+
+<%- include('../partials/footer') %>

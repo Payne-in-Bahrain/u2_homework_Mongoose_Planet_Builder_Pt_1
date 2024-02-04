@@ -1,4 +1,4 @@
-const Movie = require('../models/planet');
+const Planet = require('../models/planet');
 
 const newPlanet = (req, res) => {
     let title = "Add new Planet";

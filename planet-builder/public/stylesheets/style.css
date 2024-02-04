@@ -1,0 +1,34 @@
+body {
+  background-color: cadetblue;
+  color: aliceblue;
+  display: fleX;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+}
+table {
+  width: 80%;
+  text-align: center;
+}
+a {
+  color: aliceblue;
+}
+
+button {
+  display: inline-block;
+}
+
+.create-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

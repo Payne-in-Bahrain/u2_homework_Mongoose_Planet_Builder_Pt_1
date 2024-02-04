@@ -1,0 +1,22 @@
+body {
+  padding: 50px;
+  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00b7ff;
+}
+
+table,
+td {
+  padding: 1vw;
+  border: 3px solid black;
+  margin: 0 auto;
+}
+
+input,
+select,
+button {
+  margin: 10px;
+  border-radius: 15px;
+}

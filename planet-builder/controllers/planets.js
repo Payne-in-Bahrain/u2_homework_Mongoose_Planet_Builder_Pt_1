@@ -8,6 +8,11 @@ const newPlanet = (req, res) => {
 const create = async (req, res) => {
   console.log('this is the request body', req.body)
   req.body.Possible_alien_life = !!req.body.Possible_alien_life
+  for (let key in req.body) {
+    if (req.body[key] === '') {
+      delete req.body[key]
+    }
+  }
 
   try {
     await Planet.create(req.body)

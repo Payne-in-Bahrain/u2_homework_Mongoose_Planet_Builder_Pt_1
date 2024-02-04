@@ -1,0 +1,11 @@
+var express = require("express")
+var router = express.Router()
+
+const planetsController = require("../controllers/planets")
+
+/* GET planets listing. */
+router.get("/new", planetsController.newPlanet)
+router.post("/", planetsController.create)
+router.get("/", planetsController.index)
+
+module.exports = router

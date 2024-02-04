@@ -89,10 +89,10 @@ require('./config/database'); // database
 
 11. Implement the following User Stories:
 	
-	- AAU, I want to create a planet by entering the information on a page that has a form and submitting it.  You will need two routes.  Both a `GET /new` to display the form and a `POST /` to create the planet. 
+	- AAU, I want to create a planet by entering the information on a page that has a form and submitting it.  You will need two routes.  Both a `GET /planets/new` to display the form and a `POST /planets` to create the planet. 
 
 
-	- AAU, I want to view a list of all created planets (`index` functionality) that displays each planet's name, 	population, and climate.
+	- AAU, I want to view a list of all created planets (`index` functionality) that displays each planet's name, 	population, and climate  The route for this will be `GET /planets`.
 
 	- AAU, I want to be able to access each view via a navigation bar at the top of the page with links to:
 		- `ALL PLANETS`, and

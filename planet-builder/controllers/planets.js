@@ -1,6 +1,6 @@
 const Planet = require("../models/planet");
 
-const index = async (req, res) => {
+const planetIndex = async (req, res) => {
   const title = "Discovered Planets";
   
   try {
@@ -12,6 +12,24 @@ const index = async (req, res) => {
   }
 }
 
+const newPlanet = (req, res) => {
+  res.render("planets/new");
+}
+
+const createPlanet = async (req, res) => {
+  const title = "New Planet Discovery";
+  try {
+    await Planet.create(req.body);
+    console.log(req.body);
+    res.redirect("/planets");
+  } catch (error) {
+    console.log("🚀 ~ newPlanet ~ error:", error)
+    res.send(error.message);
+  }
+}
+
 module.exports = {
-  index
+  index: planetIndex,
+  new: newPlanet,
+  create: createPlanet,
 }

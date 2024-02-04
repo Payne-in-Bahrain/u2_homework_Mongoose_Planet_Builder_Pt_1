@@ -1,0 +1,16 @@
+<%- include('../partials/header') %>
+  <form action="/planets" method="POST">
+    <label for="name">Planet Name: </label><input type="text" name="name"><br>
+    <label for="climate">Climate: </label><select name="climate" id="">
+      <option value="Oceanic">Oceanic</option>
+      <option value="Tropical">Tropical</option>
+      <option value="Arctic">Arctic</option>
+      <option value="Desert">Desert</option>
+      <option value="Rainforest">Rainforest</option>
+      <option value="Unknown" selected>Unknown</option>
+    </select><br>
+    <label for="population">Population Count: </label><input type="number" name="population" id="" required
+      value="0"><br>
+    <button type="submit">Record New Planet</button>
+  </form>
+  <%- include('../partials/footer') %>

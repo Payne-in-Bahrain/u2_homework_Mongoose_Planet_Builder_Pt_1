@@ -1,0 +1,24 @@
+<%- include('../partials/header') %>
+
+<h2>The Planet Emporium!</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Planet name</th>
+      <th>No. of Moons</th>
+      <th>Fauna</th>
+      <th>Populated?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% planetList.forEach((p)=>{ %>
+      <tr>
+        <td><%= p.name %></td>
+        <td><%= p.numberofmoons %></td>
+        <td><%= p.fauna.join(', ') %></td>
+        <td><%= p.populated ? 'yes' : 'no' %></td>
+      </tr>
+      <%})%>
+  </tbody>
+</table>
+<%- include('../partials/footer') %>

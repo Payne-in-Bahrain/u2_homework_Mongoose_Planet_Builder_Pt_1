@@ -9,17 +9,6 @@ const create = async (req, res) => {
   console.log('this is the request body', req.body)
   req.body.Possible_alien_life = !!req.body.Possible_alien_life
 
-  for (let key in req.body) {
-    if (req.body[key] === '') {
-      delete req.body[key]
-    }
-  }
-
-  if (req.body.cast) {
-    req.body.cast = req.body.cast.split(',')
-    console.log('This is the cast array', req.body.cast)
-  }
-
   try {
     await Planet.create(req.body)
     res.redirect('/planets/new')

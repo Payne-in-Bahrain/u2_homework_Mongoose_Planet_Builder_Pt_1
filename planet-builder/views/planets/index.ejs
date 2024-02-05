@@ -6,15 +6,17 @@
       <th>NAME</th>
       <th>CLIMATE</th>
       <th>POPULATION</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
     <% planets.forEach((p) =>{ %>
-      <tr>
-        <td><%= p.name %></td>
-        <td><%= p.climate %></td>
-        <td><%= p.population %></td>
-      </tr>
+    <tr>
+      <td><%= p.name %></td>
+      <td><%= p.climate %></td>
+      <td><%= p.population %></td>
+      <td><a href="/planets/<%= p._id %>">PLANET DETAILS</a></td>
+    </tr>
     <% }) %>
   </tbody>
 </table>

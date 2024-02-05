@@ -4,6 +4,11 @@ const newPlanet = (req, res) => {
   res.render('planets/new')
 }
 
+async function show(req, res) {
+  const planet = await Planet.findById(req.params.id);
+  res.render('planets/show', { planet });
+}
+
 const create = async (req, res) => {
   for(let key in req.body){
     if (req.body[key] === ''){
@@ -30,4 +35,4 @@ const index = async(req, res) => {
     res.redirect('/')
   }
 }
-module.exports = {newPlanet, create, index}
+module.exports = {newPlanet, create, index, show}

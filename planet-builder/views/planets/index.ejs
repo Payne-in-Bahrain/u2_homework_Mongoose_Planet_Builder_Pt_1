@@ -1,0 +1,23 @@
+<%- include('../partials/header') %>
+<h2>Planets</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Climate</th>
+      <th>Population</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <% planets.forEach((p) =>{ %>
+      <tr>
+        <td><%= p.name %></td>
+        <td><%= p.climate %></td>
+        <td><%= p.population %></td>
+      </tr>
+    <% }) %>
+  </tbody>
+</table>
+
+<%- include('../partials/footer') %>

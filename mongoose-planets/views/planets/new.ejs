@@ -1,0 +1,26 @@
+<%- include('../partials/header')  %>
+
+<h2>Enter a New Planet</h2>
+<form action="/planets" method="POST">
+  <label>Name:
+    <input type="text" name="name">
+  </label><br>
+
+  <label>Climate
+    <select name="climate">
+      <option value="Oceanic">Oceanic</option>
+      <option value="Tropical">Tropical</option>
+      <option value="Arctic">Arctic</option>
+      <option value="Desert">Desert</option>
+      <option value="Rainforest">Rainforest</option>
+    </select>
+  </label><br>
+  <label>Population:
+    <input type="number" name="population">
+  </label><br>
+
+  <button type="submit">Add Planet</button>
+
+</form>
+
+<%- include('../partials/footer')  %>

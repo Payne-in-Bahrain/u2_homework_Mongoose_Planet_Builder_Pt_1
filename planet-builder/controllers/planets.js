@@ -30,4 +30,13 @@ const index = async (req, res) => {
   }
 }
 
-module.exports = { newPlanet, create, index }
+const show = async (req, res) => {
+  try {
+    const planet = await Planet.findById(req.params.id)
+    res.render('planets/show', { title: 'Planet Details', planet })
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+module.exports = { newPlanet, create, index, show }

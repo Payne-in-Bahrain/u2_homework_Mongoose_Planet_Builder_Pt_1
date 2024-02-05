@@ -7,3 +7,13 @@ a {
   color: #00b7ff;
   display: flex;
 }
+#show-page {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 1rem;
+  margin-top: 40px;
+}
+
+#show-page div:nth-child(odd) {
+  font-weight: bold;
+}

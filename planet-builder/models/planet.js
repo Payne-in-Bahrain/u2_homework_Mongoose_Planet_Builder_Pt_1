@@ -1,18 +1,32 @@
 // models/planet.js
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
-
+const animalsSchema = new Schema(
+  {
+    name: {
+      type: String,
+      required: true
+    },
+    quantity: {
+      type: Number,
+      min: 1,
+      default: 1
+    }
+  },
+  {
+    timestamps: true
+  }
+)
 const planetSchema = new Schema(
   {
     name: { type: String, required: true },
     climate: {
       type: String,
-      required: true,
-      enum: ['Oceanic', 'Tropical', 'Arctic', 'Desert', 'Rainforest'],
-      default: 'Desert'
+      required: true
     },
     population: { type: Number, required: true },
-    size: Number
+    size: Number,
+    animals: [animalsSchema]
   },
   {
     timestamps: true

@@ -1,0 +1,21 @@
+<%-include("../partials/header") %>
+<li>Name: <%= planet.name %>, Climate: <%= planet.climate %>, Population: <%= planet.population %>, Size: <%= planet.size %>, Animals: 
+<%planet.animals.forEach(animal=>{%>
+(Name: <%= animal.name%>,Quantity: <%= animal.quantity%>)
+<%})%>
+
+</li>
+<br>
+<h2>Add new Animals for the <%= planet.name %> planet</h2>
+<form method="POST" action="/planets/<%= planet._id %>/animals">
+  <div>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+  </div>
+  <div>
+    <label for="quantity">Quantity:</label>
+    <input type="number" id="quantity" name="quantity" required>
+  </div>
+  <button type="submit">Add Animal</button>
+</form>
+<%-include("../partials/footer") %>

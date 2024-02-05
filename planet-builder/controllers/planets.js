@@ -22,6 +22,17 @@ const createPlanet = async (req, res) => {
 
 const show = async (req, res) => {
   try {
+    const title = req.name
+    const planet = await Planet.findById(req.params.id)
+    console.log(planet)
+    res.render('planets/show', { planet, title })
+  } catch (error) {
+    console.log(error)
+    res.redirect('/')
+  }
+}
+const index = async (req, res) => {
+  try {
     const title = 'All Planets'
     const planets = await Planet.find({})
     console.log(planets)
@@ -31,9 +42,22 @@ const show = async (req, res) => {
     res.redirect('/')
   }
 }
+const newAnimal = async (req, res) => {
+  try {
+    const animal = await Planet.findById(req.params.id)
+    animal.animals.push(req.body)
+    await animal.save()
+    res.redirect('/planets/' + animal._id)
+  } catch (error) {
+    console.log(error)
+    res.status(500).send(error.message)
+  }
+}
 
 module.exports = {
   newPlanet,
   createPlanet,
-  show
+  show,
+  newAnimal,
+  index
 }

@@ -1,0 +1,59 @@
+<%- include('../partials/header') %>
+
+<h1>Planet Details</h1>
+
+<section>
+<div class="planet-details-header">Name</div>
+<div class="planet-details"><%=planet.name%></div>
+<div class="planet-details-header">Climate</div>
+<div class="planet-details"><%=planet.climate%></div>
+<div class="planet-details-header">Population</div>
+<div class="planet-details"><%=planet.population%></div>
+
+
+
+
+
+<%if(planet.plants.length){%>
+<div class="planet-details-header">plants</div>
+<div class="table-div">
+<table id="list">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Color</th>
+      <th>Poisonous</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% planet.plants.forEach(plant=>{ %>
+      <tr>
+        <td><%= plant.name %></td>
+        <td><%= plant.color %></td>
+        <td><%= plant.poisonous %></td>
+      </tr>
+      <% }); %>
+    </tbody>
+  </table>
+</div>
+  <%}%>
+</section>
+<section>
+  <h2>Add Plants</h2>
+  <form id="add-plant-form" method="POST" action="/planets/<%=planet._id%>/plants">
+  <input type="text" name="name" placeholder="Name">
+  <input type="text" name="color" placeholder="Color">
+
+  <select name="poisonous">
+    <option value="true">Poisonous</option>
+    <option value="false">Not Poisonous</option>
+  </select>
+  <br>
+
+  <input type="submit" value="Insert" class="plant-add">
+
+  </form>
+</section>
+
+<%- include('../partials/footer') %>

@@ -11,6 +11,10 @@ const create = async (req, res) => {
     res.redirect('/planets/new')
   }
 }
+const show = async (req, res) => {
+  const planet = await Planet.findById(req.params.id)
+  res.render('planets/show', { title: 'Planet Details', planet })
+}
 const index = async (req, res) => {
   try {
     const planets = await Planet.find({})
@@ -21,4 +25,4 @@ const index = async (req, res) => {
   }
 }
 
-module.exports = { index, newPlanet, create }
+module.exports = { index, newPlanet, create, show }

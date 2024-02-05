@@ -1,21 +1,24 @@
 <%-  include('../partials/header')%>
 <h2>Enter a New Planet</h2>
 <form action="/planets" method="POST">
-  <label>Name:
-    <input type="text" name="name">
+  <label>Name
+    <br>
+    <input type="text" placeholder="Name">
   </label><br>
-  <label>Climate:
+  <label>Climate
+    <br>
     <select name="climate">
-      <option value="Oceanic">Oceanic</option>
+      <option value="Oceanic">Oceanic</option> 
       <option value="Tropical">Tropical</option>
       <option value="Arctic">Arctic</option>
       <option value="Desert">Desert</option>
       <option value="Rainforest">Rainforest</option>
     </select>
   </label><br>
-  <label>Population:
-    <input type="text" name="population">
+  <label>Population
+    <br>
+    <input type="text" name="population" placeholder="Population">
   </label><br>
-  <button type="submit">Add Planet</button>
+  <button type="submit" class="add-planet">Add Planet</button>
 </form>
 <%-  include('../partials/footer')%>

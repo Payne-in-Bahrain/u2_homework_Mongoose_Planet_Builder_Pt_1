@@ -1,25 +1,13 @@
 <%- include('../partials/header') %>
 
 <h2>Planets List</h2>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Climate</th>
-      <th>Population</th>
-    </tr>
-  </thead>
-  <tbody>
+<ul>
     <%planets.forEach((p)=>{%>
-      <tr>
-        <td><%= p.name %></td>
-        <td><%= p.climate %></td>
-        <td><%= p.population %></td>
-      </tr>
-      <%})%>
-    <!-- Close the forEach using EJS here -->
-  </tbody>
-</table>
-
+      <li>
+        <a href="/planets/<%=p._id%>" class="planets-links"><%= p.name %></a>
+      </li>
+    <%})%>
+</ul>
+    
 <%- include('../partials/footer') %>
 

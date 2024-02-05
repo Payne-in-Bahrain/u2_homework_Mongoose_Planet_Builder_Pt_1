@@ -1,0 +1,14 @@
+<%- include('../partials/header') %>
+  <section>
+  <% planets.forEach(planet => { %> 
+      <div>
+      <h2>Name: <%= planet.name %><br>
+      Population:   <%= planet.population %><br>
+      Climate:   <%= planet.climate %></h2>
+      </div>
+    <% }) %>
+</section>
+
+
+
+<%- include('../partials/footer') %>

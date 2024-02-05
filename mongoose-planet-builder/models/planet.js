@@ -11,7 +11,7 @@ const Schema = mongoose.Schema
 const planetSchema = new Schema(
   {
     name: String,
-    numberofmoons: {type: Number, default: 2001},
+    numberofmoons: { type: Number, default: 5 },
     fauna: [String],
     populated: Boolean
   },

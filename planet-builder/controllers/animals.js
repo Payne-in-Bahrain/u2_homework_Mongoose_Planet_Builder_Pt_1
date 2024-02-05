@@ -3,7 +3,6 @@ const Planet = require('../models/planet')
 const create = async (req, res) => {
   // find planet by id
   if(req.body.population > 0 && req.body.extinct === 'true'){
-    console.log('inside the if')
     req.body.population = 0
   }
   try {

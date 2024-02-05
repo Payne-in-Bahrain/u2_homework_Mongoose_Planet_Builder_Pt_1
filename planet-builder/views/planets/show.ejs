@@ -1,0 +1,60 @@
+<%- include('../partials/header')%>
+
+<section id="show-page">
+  <div>Planet Name:</div>
+  <div><%= planet.planetName %></div>
+  <div>Planet's Civilization:</div>
+  <div><%= planet.civilization %></div>
+  <div>Planet Radius</div>
+  <div><%= planet.planetRadius %></div>
+</section>
+
+<br /><br />
+<h2>Planet Enviroment</h2>
+<form method="POST" action="/planets/<%= planet._id %>/enviroments">
+  <label>Enviroment Type:</label>
+  <select name="enviromentType">
+    <option value="Arctic">Arctic</option>
+    <option value="Dessert">Dessert</option>
+    <option value="Tropical">Tropical</option>
+    <option value="Aquatic">Aquatic</option>
+    <option value="Empyrean">Empyrean</option>
+    <option value="Forest" selected>Forest</option>
+  </select>
+  <label>Weather:</label>
+  <textarea name="weather"></textarea>
+
+  <label>Vegetation</label>
+  <select name="vegetation">
+    <option value="true">True</option>
+    <option value="false">False</option>
+  </select>
+  <label>Wild Life (5 - 10000)</label>
+  <input type="text" name="wildlife" />
+  <input type="submit" value="Add Enviroment" />
+</form>
+
+<% if (planet.enviroment.length) { %>
+<table>
+  <thead>
+    <tr class="enviroment">
+      <th>Enviroment Type</th>
+      <th>Weather</th>
+      <th>Vegetation</th>
+      <th>Wild Life</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% planet.enviroment.forEach((r) => { %>
+    <tr>
+      <td><%= r.enviromentType %></td>
+      <td><%= r.weather %></td>
+      <td><%= r.vegetation %></td>
+      <td><%= r.wildlife %></td>
+    </tr>
+    <% }); %>
+  </tbody>
+</table>
+<% } else { %>
+<h5>No Enviroment Yet</h5>
+<% } %> <%- include('../partials/footer')%>

@@ -3,11 +3,12 @@ const router = express.Router()
 const planetsCtrl = require('../controllers/planets')
 
 //GET/new
+router.get('/', planetsCtrl.index)
 
 router.get('/new', planetsCtrl.newPlanet)
 
-router.post('/', planetsCtrl.create)
+router.get('/:id', planetsCtrl.show)
 
-router.get('/', planetsCtrl.index)
+router.post('/', planetsCtrl.create)
 
 module.exports = router

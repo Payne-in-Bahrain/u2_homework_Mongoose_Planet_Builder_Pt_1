@@ -1,21 +1,23 @@
 <%- include('../partials/header.ejs') %>
 
-<h2>Movie List</h2>
-<table>
+<h2>Planet System</h2>
+<table class="display">
   <thead>
-    <tr class="display">
+    <tr>
       <th>Planet Name</th>
       <th>Planet Radius</th>
       <th>Civilization</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
     <% planets.forEach(m=>{ %>
 
-    <tr class="display">
+    <tr>
       <td><%= m.planetName %></td>
       <td><%= m.planetRadius %></td>
       <td><%= m.civilization %></td>
+      <td><a href="/planets/<%= m._id %>">DETAILS</a></td>
       <%})%>
       <!-- Close the forEach using EJS here -->
     </tr>

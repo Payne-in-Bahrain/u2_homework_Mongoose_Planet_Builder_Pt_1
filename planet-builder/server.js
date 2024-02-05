@@ -10,6 +10,7 @@ require("./config/database");
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 const planetsRouter = require("./routes/planets");
+const plantsRouter = require("./routes/plants");
 
 var app = express();
 
@@ -24,6 +25,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
+// embedded route
+app.use("/", plantsRouter);
 app.use('/users', usersRouter);
 app.use("/planets", planetsRouter);
 

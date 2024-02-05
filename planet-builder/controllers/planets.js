@@ -28,8 +28,15 @@ const createPlanet = async (req, res) => {
   }
 }
 
+const planetDetails = async (req, res) => {
+  const planetFound = await Planet.findOne({_id: req.params.id});
+  
+  res.render("planets/show", {planet: planetFound});
+}
+
 module.exports = {
   index: planetIndex,
   new: newPlanet,
   create: createPlanet,
+  show: planetDetails
 }

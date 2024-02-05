@@ -2,14 +2,10 @@
   <h1>Planets Discovered</h1>
   <hr>
   <% planets.forEach(element=> { %>
-    <h3>Name:
-      <%= element.name %>
-    </h3>
-    <h3>Climate:
-      <%= element.climate %>
-    </h3>
-    <h3>Population:
-      <%= element.population %>
+    <h3>
+      <a href="/planets/<%= element._id %>">
+        <%= element.name %>
+      </a>
     </h3>
     <hr>
     <% }); %>

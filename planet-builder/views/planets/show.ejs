@@ -1,0 +1,26 @@
+<%- include('../partials/header') %>
+  <h1>Planet Details</h1>
+  <h3>Name:
+    <%= planet.name %>
+  </h3>
+  <h3>Climate:
+    <%= planet.climate %>
+  </h3>
+  <h3>Population:
+    <%= planet.population %>
+  </h3>
+  <h3>Plants:
+    <%= planet.plants %>
+  </h3>
+  <h1>Record a Plant</h1>
+  <form action="/planets/<%= planet._id %>/new" method="POST">
+    <label for="vegName">Plant Name: </label><input type="text" name="vegName" id="">
+    <label for="color"></label>Color<input type="text" name="color" id="">
+    <label for="poisonous">Poisonous</label>
+    <select name="poisonous" id="">
+      <option value="true">Yes</option>
+      <option value="false">no</option>
+    </select>
+    <button type="submit">Save</button>
+  </form>
+  <%- include('../partials/footer') %>

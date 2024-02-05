@@ -1,0 +1,62 @@
+
+<%- include('../partials/header') %>
+
+<h2>Planet List</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>climate</th>
+      <th>population</th>
+      <th>has water</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><%= planet.name %></td>
+        <td><%= planet.climate %></td>
+        <td><%= planet.population %></td>
+        <td><%= planet.hasWater? 'Yes': 'No' %></td>
+  </tbody>
+</table>
+
+<br><br><h2>add a plant</h2>
+<form id="add-review-form" method="POST"
+  action="/planets/<%= planet._id %>/plants">
+  <label>Name:
+    <input type="text" name="name">
+  </label><br>
+  <label>Color:
+    <input type="text" name="color">
+  </label><br>
+  <label>Poisonous:
+    <input type="checkbox" name="poisonous">
+  </label><br>
+  <input type="submit" value="Add plant">
+</form>
+<h2>List Of Plants</h2>
+
+<% if (planet.plants.length) { %>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Color</th>
+        <th>Poisonous</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% planet.plants.forEach(function(plant) { %>
+        <tr>
+          <td><%= plant.name %></td>
+          <td><%= plant.color %></td>
+          <td><%= plant.poisonous %></td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+<% } else { %>
+  <h5>No plants Yet</h5>
+<% } %>
+
+<%- include('../partials/footer') %>

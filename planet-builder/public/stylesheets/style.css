@@ -1,8 +1,22 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-image: url("https://as1.ftcdn.net/v2/jpg/05/75/53/18/1000_F_575531822_am0qdEMaMnXVaA8LKiKGdXemmPbXR7Pi.jpg");
+  background-size: cover;
+}
+form,
+tbody,
+thead,
+input {
+  margin: 3px;
+  padding: 3px;
 }
 
 a {
-  color: #00B7FF;
+  color: #00b7ff;
 }

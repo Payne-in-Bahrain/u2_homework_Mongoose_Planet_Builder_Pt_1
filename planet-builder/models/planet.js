@@ -1,6 +1,17 @@
 const mongoose = require("mongoose")
 const Schema = mongoose.Schema
 
+const plantScema = new Schema(
+  {
+    name: { type: String, require: true },
+    color: { type: String, require: true },
+    poisonous: { type: Boolean, require: true, enum: [true, false] },
+  },
+  {
+    timestamps: true,
+  }
+)
+
 const planetScema = new Schema(
   {
     name: { type: String, require: true },
@@ -17,6 +28,7 @@ const planetScema = new Schema(
       max: 9999999,
     },
     hasWater: { type: Boolean },
+    plants: [plantScema],
   },
   {
     timestamps: true,

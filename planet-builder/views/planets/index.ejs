@@ -1,0 +1,22 @@
+<%- include('../partials/header') %>
+
+<table id="list">
+  <thead>
+    <tr>
+      <th>Planet</th>
+      <th>climate</th>
+      <th>population</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% planets.forEach(function(m) { %>
+      <tr>
+        <td><%= m.planet %></td>
+        <td><a href="/planets/<%= m._id %>">DETAILS</a></td>
+      </tr>
+      <% }); %>
+    </tbody>
+  </table>
+  
+<%- include('../partials/footer') %>

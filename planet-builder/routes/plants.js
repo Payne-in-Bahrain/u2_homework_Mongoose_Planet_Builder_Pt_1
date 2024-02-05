@@ -2,6 +2,6 @@ const express = require("express");
 const router = express.Router();
 const vegCtrl = require("../controllers/plants");
 
-router.post("/planet/:id/new", vegCtrl.new);
+router.post("/planets/:id/new", vegCtrl.create);
 
 module.exports = router;

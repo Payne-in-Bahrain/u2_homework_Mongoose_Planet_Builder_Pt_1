@@ -10,7 +10,22 @@
     <%= planet.population %>
   </h3>
   <h3>Plants:
-    <%= planet.plants %>
+    <% if(planet.plants.length) { %>
+      <ul>
+        <% planet.plants.forEach(element=> { %>
+          <li>
+            <%= element.vegName %>
+          </li>
+          <li>
+            <%= element.color %>
+          </li>
+          <li>
+            <%= element.poisonous ? "Poisonous" : "Not Poisonous" %>
+          </li>
+          <hr>
+          <% }); %>
+      </ul>
+      <% } %>
   </h3>
   <h1>Record a Plant</h1>
   <form action="/planets/<%= planet._id %>/new" method="POST">

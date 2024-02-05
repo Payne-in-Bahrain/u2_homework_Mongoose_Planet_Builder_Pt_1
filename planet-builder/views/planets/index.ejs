@@ -1,0 +1,9 @@
+<%-include("../partials/header") %>
+  <h1><%= title %></h1>
+  <ul>
+    <% planets.forEach(planet => { %>
+      <li>Name: <%= planet.name %> , Climate: <%= planet.climate %>, Population: <%= planet.population %>, Size: <%= planet.size %></li>
+    <% }); %>
+  </ul>
+  <%-include("../partials/footer") %>
+

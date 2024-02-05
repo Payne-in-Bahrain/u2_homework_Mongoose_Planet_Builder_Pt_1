@@ -5,16 +5,12 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Climate</th>
-      <th>Population</th>
     </tr>
   </thead>
   <tbody>
     <% planets.forEach(planet => { %>
       <tr>
-        <td><%= planet.name %></td>
-        <td><%= planet.climate %></td>
-        <td><%= planet.population %></td>
+        <td><a href="/planets/<%= planet._id %>"><%= planet.name %></a></td>
         </tr>
     <% }) %>
   </tbody>

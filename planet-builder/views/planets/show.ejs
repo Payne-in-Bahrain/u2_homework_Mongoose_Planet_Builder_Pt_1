@@ -1,0 +1,64 @@
+<%- include('../partials/header') %>
+<section class="planet-details">
+  <div class="detail">
+    <h4>Name:</h4>
+    <p><%= planet.name %></div></p>
+  </div>
+  <div class="detail">
+    <h4>Climate: </h4>
+    <p><%= planet.climate %></p>
+  </div>
+  <div class="detail">
+    <h4>Population: </h4>
+    <p><%= planet.population %></p>
+  </div>
+</section>
+  <h4>Plants</h4>
+  <p>
+    <% if (planet.plants.length) { %>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Color</th>
+          <th>Poisonous</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <% planet.plants.forEach(plant => { %>
+          <tr>
+            <td><%= plant.name %></td>
+            <td><%= plant.color %></td>
+            <td><%= plant.poisonous ? "Yes" : "No" %></td>
+            </tr>
+        <% }) %>
+      </tbody>
+    </table>
+    <% } else { %>
+      <h5>No Plants Known</h5>
+    <% } %>
+  </p>
+
+<h3>Add Plants</h3>
+<form action="/planets/<%= planet._id %>/plants" method="POST" >
+  <section class="create-form">
+
+  <div>
+    <label>Name:</label>
+    <input type="text" name="name">
+  </div>
+  <div>
+    <label>Color:</label>
+    <input type="text" name="color">
+  </div>
+  <div>
+    <label>Poisonous: </label>
+    <input type="checkbox" name="poisonous">
+  </div>
+  <input type="submit" value="Add Plant">
+</section>
+
+</form>
+
+<%- include('../partials/footer') %>

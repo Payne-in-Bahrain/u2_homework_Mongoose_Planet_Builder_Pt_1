@@ -32,3 +32,18 @@ button {
   justify-content: center;
   align-items: center;
 }
+
+.planet-details {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.detail {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3%;
+}

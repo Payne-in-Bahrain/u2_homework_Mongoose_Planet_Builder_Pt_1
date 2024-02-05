@@ -1,4 +1,4 @@
-// define a function called newMovie that renders the new.ejs template
+// define a function called newPlanet that renders the new.ejs template
 
 const PlanetModel = require('../models/planet')
 

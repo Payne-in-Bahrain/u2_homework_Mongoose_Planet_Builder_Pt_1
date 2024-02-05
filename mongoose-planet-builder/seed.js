@@ -3,7 +3,7 @@ require('./config/database') // Execute the code to connect to the db
 
 const Planet = require('./models/planet')
 
-// Define an async function to create the movie in the database
+// Define an async function to create the planet in the database
 const createPlanet = async () => {
   try {
     const doc = await Planet.create({

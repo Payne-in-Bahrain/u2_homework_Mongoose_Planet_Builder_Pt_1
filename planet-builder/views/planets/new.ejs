@@ -1,0 +1,20 @@
+<%- include('../partials/header') %>
+<form action="/planets" method="POST">
+  <label for="name">Name</label>
+  <input type="text" name="name">
+  <br>
+  <label for="climate">Climate</label>
+  <select name="climate">
+    <option value="oceanic">Oceanic</option>
+    <option value="tropical">Tropical</option>
+    <option value="arctic">Arctic</option>
+    <option value="desert">Desert</option>
+    <option value="rainforest">Rainforest</option>
+  </select>
+  <br>
+  <label for="population">Population</label>
+  <input type="number" name="population" min="0" max="9999999">
+  <br>
+  <button type="submit">Submit</button>
+</form>
+<%- include('../partials/footer') %>

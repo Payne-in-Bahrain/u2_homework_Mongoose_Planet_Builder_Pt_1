@@ -1,0 +1,6 @@
+<%- include('../partials/header') %>
+<h1>Planets</h1>
+<% planets.forEach((planet) => { %>
+  <p><%= planet.name %> <%= planet.climate %> <%= planet.population%></p>
+<% }) %>
+<%- include('../partials/footer') %>

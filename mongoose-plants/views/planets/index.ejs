@@ -1,7 +1,6 @@
 <%- include('../partials/header') %>
 
-<h2>Planet List</h2>
-<table>
+<table id="list">
   <thead>
     <tr>
       <th>Name</th>
@@ -15,6 +14,7 @@
         <td><%= planet.name %></td>
         <td><%= planet.climate %></td>
         <td><%= planet.population %></td>
+        <td><a href="/planets/<%= planet._id %>">DETAILS</a></td>
       </tr>
     <% }) %> <!-- Close the forEach using EJS here -->
   </tbody>

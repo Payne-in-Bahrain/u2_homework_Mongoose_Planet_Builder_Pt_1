@@ -3,9 +3,15 @@ var router = express.Router();
 
 const planetCtrl = require('../controllers/planets')
 
-router.get('/new', planetCtrl.new)
-router.post('/', planetCtrl.create)
 
 router.get('/', planetCtrl.index)
+
+router.get('/new', planetCtrl.new)
+
+router.get('/:id', planetCtrl.show);
+
+router.post('/', planetCtrl.create)
+
+
 
 module.exports = router;

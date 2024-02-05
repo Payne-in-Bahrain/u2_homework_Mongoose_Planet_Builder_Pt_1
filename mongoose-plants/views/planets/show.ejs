@@ -1,0 +1,44 @@
+<%- include('../partials/header') %>
+
+<section id="show-page">
+  <div>Name: </div>
+  <div><%= planet.name %></div>
+  <div>Climate: </div>
+  <div><%= planet.climate %></div>
+  <div>Population: </div>
+  <div><%= planet.population %></div>
+</section>
+<br><br><h2>Plants</h2>
+<form id="add-plant-form" method="POST"
+  action="/planets/<%=planet._id%>/plants">
+  <label>Name:</label>
+  <input name="name"></input>
+  <label>Color:</label>
+  <input name="color"></input>
+  <label>Poisonous:</label>
+  <input type="checkbox" name="poisonous" checked>
+  <input type="submit" value="Add Plant">
+</form>
+<% if (planet.plants.length) { %>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Color</th>
+        <th>Poisonous</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% planet.plants.forEach((p) => { %>
+        <tr>
+          <td><%= p.name %></td>
+          <td><%= p.color %></td>
+          <td><%= p.poisonous %></td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+<% } else { %>
+  <h5>No Plants Yet</h5>
+<% } %>
+<%- include('../partials/footer') %>

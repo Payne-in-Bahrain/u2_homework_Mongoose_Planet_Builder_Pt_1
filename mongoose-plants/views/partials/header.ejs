@@ -5,7 +5,7 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <nav>
-    <a href="/planets/new">Add a new Planet</a>
-    <a href="/planets">See all Planets</a>
+    <a href="/planets/new" <%- title === 'Add Movie' ? 'class="active"' : '' %>>Add a new Planet</a>
+    <a href="/planets" <%- title === 'All Movies' ? 'class="active"' : '' %>>See all Planets</a>
   </nav>
   <body>

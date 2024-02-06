@@ -1,0 +1,20 @@
+<%- include('../partials/header') %>
+
+<table id="list">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>View</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% planets.forEach ((planet) => { %> <!-- Write the line of EJS to iterate over movies using forEach -->
+      <tr>
+        <td><%= planet.name %></td>
+        <td><a href="/planets/<%= planet._id %>">DETAILS</a></td>
+      </tr>
+    <% }) %> <!-- Close the forEach using EJS here -->
+  </tbody>
+</table>
+
+<%- include('../partials/footer') %>

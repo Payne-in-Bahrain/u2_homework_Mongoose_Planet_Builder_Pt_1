@@ -17,8 +17,8 @@ const destinationPlanet = (req, res) => {
 }
 
 module.exports = {
-  newForm: explorerForm,
-  new: showAllExplorers,
+  new: explorerForm,
+  index: showAllExplorers,
   create: addExplorer,
   destinationPlanet
 }

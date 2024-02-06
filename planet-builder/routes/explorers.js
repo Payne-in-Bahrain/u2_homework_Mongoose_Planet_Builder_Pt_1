@@ -9,6 +9,6 @@ router.get("/explorers", explorersCtrl.index);
 // POST /explorers: Create a new explorer.
 router.post("/explorers/new", explorersCtrl.create);
 // POST /planets/:planetId/explorers: Allow users to submit the explorer id in the request body to associate the explorer with the specified planet.
-router.post("/planets/:planetId/explorers", explorersCtrl.addPlanet)
+router.post("/planets/:planetId/explorers", explorersCtrl.destinationPlanet)
 
 module.exports = router;

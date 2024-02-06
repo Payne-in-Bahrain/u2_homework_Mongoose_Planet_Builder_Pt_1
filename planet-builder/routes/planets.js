@@ -7,5 +7,6 @@ router.get("/new", planetsCtrl.newPlanet)
 router.post("/", planetsCtrl.create)
 //GET
 router.get("/", planetsCtrl.index)
+router.get("/:id", planetsCtrl.show)
 
 module.exports = router

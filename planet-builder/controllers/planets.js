@@ -1,9 +1,8 @@
 //define a function called newMovie that renders the new.ejs tamplate
 const Planet = require("../models/planet")
 
-const newPlanet = (req, res) => {
-  const title = "Add Planet"
-  res.render("planets/new", { title })
+function newPlanet(req, res) {
+  res.render("planets/new", { title: "Add Planet", errorMsg: "" })
 }
 const create = async (req, res) => {
   console.log("this is the request body", req.body)
@@ -32,12 +31,17 @@ const index = async (req, res) => {
     res.render("planets/index.ejs", { planets, title })
   } catch (error) {
     console.log(error)
-    res.redirect("/")
+    res.redirect("/planets")
   }
+}
+async function show(req, res) {
+  const planet = await Planet.findById(req.params.id)
+  res.render("planets/show", { title: "Planet Detail", planet })
 }
 
 module.exports = {
   newPlanet,
   create,
   index,
+  show,
 }

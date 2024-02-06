@@ -1,0 +1,17 @@
+<%- include('../partials/header') %>
+
+<div>Before adding the explorer, please ensure that the explorer is not in the following list:</div>
+<section>
+  <% explorers.forEach((explorer)=> { %>
+<%= explorer.name %>
+  <% }) %>
+</section>
+
+<form action="/explorers" method="POST">
+  <label>Name:</label>
+  <input type="text" name="name">
+  <input type="number" name="age">
+  <input type="submit" value="Add Explorer">
+</form>
+
+<%- include('../partials/footer') %>

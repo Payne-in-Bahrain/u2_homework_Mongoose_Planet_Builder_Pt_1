@@ -26,7 +26,8 @@ const planetSchema = new Schema(
     },
     population: { type: Number, required: true },
     size: Number,
-    animals: [animalsSchema]
+    animals: [animalsSchema],
+    explorers: [{ type: Schema.Types.ObjectId, ref: 'explorer' }]
   },
   {
     timestamps: true

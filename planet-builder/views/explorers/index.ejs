@@ -1,0 +1,7 @@
+<%- include("../partials/header") %>
+<h2>All the explorers:</h2>
+<%explorers.forEach((explorer)=>{%>
+  <%= explorer.name %> - <%= explorer.age %>
+<br>
+<%})%>
+<%- include("../partials/footer") %>

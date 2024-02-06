@@ -18,4 +18,27 @@
   </div>
   <button type="submit">Add Animal</button>
 </form>
-<%-include("../partials/footer") %>
+<br><br><h2>Add a Explorer</h2>
+<form method="POST"  action="/explorers/planets/<%= planet._id %>/explorers">
+  <select name="explorerId">
+    <% availableexplorers.forEach((explorer) => { %>
+      <option value="<%= explorer._id %>"><%= explorer.name %></option> 
+    <% }); %>
+  </select>
+  <input type="submit" value="Add Explorer">
+</form>
+
+<% if (planet.explorers && planet.explorers.length) { %>
+  <h3>Explorers:</h3>
+  <ul>
+    <% planet.explorers.forEach((explorer) => { %>
+      <li><%= explorer.name %></li>
+    <% }); %>
+  </ul>
+<% } else { %>
+  <h5>No Explorers yet</h5>
+<% } %>
+
+
+
+<%- include('../partials/footer') %>

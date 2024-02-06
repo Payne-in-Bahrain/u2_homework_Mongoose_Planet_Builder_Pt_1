@@ -1,5 +1,5 @@
 const Planet = require('../models/planet')
-
+const Explorer = require('../models/explorer')
 const newPlanet = (req, res) => {
   const title = 'Add a Planet'
   res.render('planets/new', { title })
@@ -22,15 +22,30 @@ const createPlanet = async (req, res) => {
 
 const show = async (req, res) => {
   try {
-    const title = req.name
-    const planet = await Planet.findById(req.params.id)
-    console.log(planet)
-    res.render('planets/show', { planet, title })
+    const planet = await Planet.findById(req.params.id).populate('explorers')
+    const explorers = await Explorer.find({})
+    const planetexplorers = planet.explorers
+    const explorersNames = planetexplorers.map(
+      (explorersMember) => explorersMember.name
+    )
+
+    const availableexplorers = explorers.filter((explorer) => {
+      console.log(typeof explorer._id)
+      if (!explorersNames.includes(explorer.name)) {
+        return explorer
+      }
+    })
+    res.render('planets/show', {
+      title: 'planet Detail',
+      planet,
+      availableexplorers
+    })
   } catch (error) {
     console.log(error)
     res.redirect('/')
   }
 }
+
 const index = async (req, res) => {
   try {
     const title = 'All Planets'

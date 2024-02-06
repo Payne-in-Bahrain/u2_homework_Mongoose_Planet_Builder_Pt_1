@@ -40,7 +40,7 @@
   </form>
   <hr>
   <h1>Add a Crew Member</h1>
-  <form action="/planets/<%= planet._id %>/explorers">
+  <form action="/planets/<%= planet._id %>/explorers" method="POST">
     <label for="crew"></label><select name="crew" id="">
       <% explorer.forEach((value)=> { %>
         <option value="<%= value._id %>">

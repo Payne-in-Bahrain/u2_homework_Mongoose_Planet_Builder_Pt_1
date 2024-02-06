@@ -1,0 +1,6 @@
+<%- include('../partials/header') %>
+<%p.forEach((planet) => {%>
+<p><a href="/planets/<%=planet._id%>"><%=planet.name%></a></p>
+<%})%>
+<hr>
+<%- include('../partials/footer') %>

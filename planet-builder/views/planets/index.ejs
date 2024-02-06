@@ -1,6 +1,36 @@
 <%- include('../partials/header') %>
-<%p.forEach((planet) => {%>
-<p><a href="/planets/<%=planet._id%>"><%=planet.name%></a></p>
-<%})%>
+<style>
+  section.planets {
+    width: 70%;
+    margin: 20px auto;
+  }
+
+  div.planet {
+    width: 200px;
+    border-bottom: 2px solid red;
+    margin: 5px auto;
+  }
+
+  p {
+    background-color: antiquewhite;
+  }
+  span.label {
+    background-color: azure;
+  }
+
+  span.val {
+    background-color: chartreuse;
+    float: right;
+  }
+</style>
+<section class="planets">
+  <%p.forEach((planet) => {%>
+    <div class="planet">
+      <p class="name"><span class="label">Name:</span><span class=val><%=planet.name%></span></p><p class="climate"><span class="label">Climate:</span><span class=val><%=planet.climate%></span></p>
+      <p class="population"><span class="label">Population:</span><span class=val><%=planet.population%></span></p>
+    </div>
+  <%})%>
+    
+</section>
 <hr>
 <%- include('../partials/footer') %>

@@ -4,10 +4,38 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
     a {
+      font-size:small;
       margin:0 5px;
+      color: inherit;
+    }
+
+    a:hover {
+      padding: 2px;
+      color: #000;
+      background-color: #fff;
+    }
+
+    h2 {
+      width: 170px;
+      margin: 5px auto;
+    }
+    nav.mainNav {
+      width: calc(100% - 20px);
+      margin: 5px auto;
+      padding: 3px 0;
+      text-align: center;
+      color: #fff;
+      background-color: black;
     }
   </style>
   <title><%=title%></title>
 </head>
 <body>
+  <h2>Planets World</h2>
+  <nav class="mainNav"><a href="/planets/new">ADD PLANET</a><a href="/planets">ALL PLANETS</a></nav>
+  <hr>

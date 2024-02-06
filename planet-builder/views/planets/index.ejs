@@ -1,10 +1,11 @@
 <%- include('../partials/header') %>
 
 <h2>Planet List</h2>
+<h1><%= name  %></h1>
 <table>
   <thead>
     <tr>
-      <th>Name</th>
+      <th>Title</th>
       <th>size</th>
       <th>distanceFromSun</th>
       <th> hasMoons</th>
@@ -21,6 +22,7 @@
         <!-- finish the ternary expression to display
                       'Yes' or 'Nope' --> 
         <td><%= p.hasMoons ? 'Yes' : 'Nope'  %></td>
+        <td><a href="/planets/<%= p._id %>">DETAILS</a></td>
       </tr>
       <% })  %> 
     <!-- Close the forEach using EJS here -->

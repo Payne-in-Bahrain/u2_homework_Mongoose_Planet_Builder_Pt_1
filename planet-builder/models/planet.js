@@ -3,7 +3,16 @@ const mongoose = require('mongoose');
 // optional shortcut to the mongoose.Schema class
 const Schema = mongoose.Schema;
 
-// Define the Schema
+const plantsSchema = new Schema({
+  content: String,
+  colour: String,
+  poisonous: Boolean
+}, {
+  timestamps: true
+});
+
+
+// Define the planet Schema
 const planetSchema = new Schema(
 // Define the fields and their properties here  
   {
@@ -11,6 +20,7 @@ const planetSchema = new Schema(
   size: String,
   distanceFromSun: String,
   hasMoons: Boolean,
+  plants: [plantsSchema]
 }, {
   timestamps: true
 });

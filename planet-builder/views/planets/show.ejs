@@ -1,0 +1,46 @@
+<%- include('../partials/header') %>
+
+<section id="show-page">
+  <div>Name: </div>
+  <div><%= planet.name %></div>
+  <div>Size: </div>
+  <div><%= planet.size %></div>
+  <div>distanceFromSun: </div>
+  <div><%= planet.distanceFromSun %></div>
+  <div> hasMoons: </div>
+  <div><%= planet. hasMoons? 'Yes' : 'Nope' %></div>
+</section>
+<h2>Reviews</h2>
+<%  if (planet.plants.length) {%>
+  <table>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>plant</th>
+        <th>Rating</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% planet.plants.forEach(function(plant) { %>
+        <tr>
+          <td><%= plant.createdAt.toLocaleDateString() %></td>
+          <td><%= plant.content %></td>
+          <td><%= plant.colour %></td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+<% } else { %>
+  <h5>No plants Yet</h5>
+<% } %> 
+<form id="add-plant-form" method="POST"
+  action="/planets/<%= planet._id %>/plants">
+  <label>Content:</label>
+  <textarea name="content"></textarea>
+  <label>Colour:</label>
+  <textarea name="colour"></textarea>
+  </select>
+  <input type="submit" value="Add Review">
+</form>
+  
+<%- include('../partials/footer') %>

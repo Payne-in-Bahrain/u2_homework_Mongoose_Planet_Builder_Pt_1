@@ -1,6 +1,7 @@
 // define a function called newPlanet that renders the new.ejs template
 
 const PlanetModel = require('../models/planet')
+const Explorer = require('../models/explorer')
 
 const newPlanet = (req, res) => {
   const title = 'New planet addition'
@@ -40,8 +41,29 @@ const create = async (req, res) => {
   }
 }
 
+const show = async (req, res) => {
+  const planet = await PlanetModel.findById(req.params.id).populate('astro')
+  const explorers = await Explorer.find({})
+  const planetAstro = planet.astro
+  //create a new array of just the names from the movieCast
+  const astroNames = planetAstro.map((astroMember) => astroMember.name)
+
+  const availableExplorers = explorers.filter((explorer) => {
+    console.log(typeof explorer._id)
+    if (!astroNames.includes(explorer.name)) {
+      return explorer
+    }
+  })
+  res.render('planets/show', {
+    title: 'Planet Detail',
+    planet,
+    availableExplorers
+  })
+}
+
 module.exports = {
   newPlanet,
   create,
-  index
+  index,
+  show
 }

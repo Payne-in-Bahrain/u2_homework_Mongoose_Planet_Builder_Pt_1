@@ -8,12 +8,33 @@ const mongoose = require('mongoose')
 
 const Schema = mongoose.Schema
 
+const moonSchema = new Schema({
+  moonname: {
+    type: String,
+    required: true
+  },
+  type: {
+    type: String,
+    required: true
+  },
+  civs: {
+    type: Number,
+    min: 0,
+    max: 9,
+    default: 0
+  }
+}, {
+  timestamps: true
+});
+
 const planetSchema = new Schema(
   {
     name: String,
     numberofmoons: { type: Number, default: 5 },
     fauna: [String],
-    populated: Boolean
+    populated: Boolean,
+    moons: [moonSchema],
+    astro: [{ type: Schema.Types.ObjectId, ref: 'Explorer' }],
   },
   {
     timestamps: true

@@ -8,6 +8,7 @@
       <th>No. of Moons</th>
       <th>Fauna</th>
       <th>Populated?</th>
+      <th>View details</th>
     </tr>
   </thead>
   <tbody>
@@ -17,6 +18,7 @@
         <td><%= p.numberofmoons %></td>
         <td><%= p.fauna.join(', ') %></td>
         <td><%= p.populated ? 'yes' : 'no' %></td>
+        <td><a href="/planets/<%= p._id %>">learn more</a></td>
       </tr>
       <%})%>
   </tbody>

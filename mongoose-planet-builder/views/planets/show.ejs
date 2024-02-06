@@ -1,0 +1,84 @@
+<%- include('../partials/header') %>
+
+<section id="show-page">
+  <div>Planet Name: </div>
+  <div><%= planet.title %></div>
+  <div>Number of moons: </div>
+  <div><%= planet.numberofmoons %></div>
+  <div>Fauna: </div>
+  <div><%= planet.fauna.join(', ') %></div>
+  <div>Populated?: </div>
+  <div><%= planet.populated ? 'Yes' : 'No intelligent life' %></div>
+</section>
+<!-- ----------------------------------------------------------------------------------------------------- -->
+
+<br><br><h2>Moons</h2>
+<form id="add-review-form" method="POST"
+  action="/planets/<%= planet._id %>/moons">
+  <label>Moon Name:</label>
+  <textarea name="moonname"></textarea>
+  <label>Moon type:</label>
+  <textarea name="type"></textarea>
+  <label>Number of civs:</label>
+  <select name="civs">
+    <option value="0">0</option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+    <option value="8">8</option>
+    <option value="9" selected>9</option>
+  </select>
+  <input type="submit" value="Add Moon">
+</form>
+<% if (planet.fauna.length) { %>
+  <table>
+    <thead>
+      <tr>
+        <th>Name of the moon</th>
+        <th>Type</th>
+        <th>Number of Civilizations</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% planet.moons.forEach(function(r) { %>
+        <tr>
+          <td><%= r.moonname%></td>
+          <td><%= r.type %></td>
+          <td><%= r.civs %></td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+<% } else { %>
+  <h5>No Moons yet</h5>
+<% } %>
+
+<!-- Display a dropdown of available performers -->
+<br><br><h2>Add an explorer</h2>
+<form id="add-review-form" method="POST"
+  action="/planets/<%= planet._id %>/explorers">
+  <select name="explorerId">
+    <% availableExplorers.forEach((explorer) => { %>
+      <option value="<%= explorer._id %>"><%= explorer.name %></option> 
+    <% }); %>
+  </select>
+  <input type="submit" value="Add Explorer">
+</form>
+
+<!-- Display the cast -->
+<% if (planet.astro.length) { %>
+  <h3>Explorers</h3>
+  <ul>
+    <% planet.astro.forEach((explorer) => { %>
+      <li><%= explorer.name %></li>
+    <% }); %>
+  </ul>
+<% } else { %>
+  <h5>No explorers Yet</h5>
+<% } %>
+  
+<%- include('../partials/footer') %>

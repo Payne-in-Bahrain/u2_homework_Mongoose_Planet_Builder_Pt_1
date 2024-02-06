@@ -6,6 +6,10 @@ const planetsCtrl = require('../controllers/planets')
 
 router.get('/new', planetsCtrl.newPlanet)
 
+// GET /planets/:id (show functionality) MUST be below new route
+
+router.get('/:id', planetsCtrl.show);
+
 //GET /planets
 
 router.get('/', planetsCtrl.index)

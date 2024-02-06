@@ -14,7 +14,8 @@ const planetSchema = new Schema({
   name: {type: String, default: "Uncharted Sector"},
   climate: {type: String, enum: ['Oceanic', 'Tropical', 'Arctic', 'Desert', 'Rainforest', "Unknown"], default: "Unknown"},
   population: {type: Number, min: 0, max: 9999999, default: 3000000},
-  plants: [vegatationSchema]
+  plants: [vegatationSchema],
+  crew: {type: Schema.Types.ObjectId, ref: "Explorer"}
 }, {
   timestamps: true
 });

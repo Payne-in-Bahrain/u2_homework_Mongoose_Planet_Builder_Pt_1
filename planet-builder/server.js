@@ -10,6 +10,7 @@ var indexRouter = require("./routes/index")
 var usersRouter = require("./routes/users")
 var planetsRouter = require("./routes/planets")
 var plantsRouter = require("./routes/plants.js")
+var explorersRouter = require("./routes/explorers.js")
 
 var app = express()
 
@@ -26,6 +27,7 @@ app.use(express.static(path.join(__dirname, "public")))
 app.use("/", indexRouter)
 app.use("/users", usersRouter)
 app.use("/planets", planetsRouter)
+app.use("/", explorersRouter)
 app.use("/", plantsRouter)
 
 // catch 404 and forward to error handler

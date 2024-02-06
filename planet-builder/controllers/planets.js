@@ -1,4 +1,5 @@
 const Planets = require("../models/planet")
+const Explorer = require("../models/explorer")
 
 const newPlanet = (req, res) => {
   res.render("planets/new")
@@ -33,7 +34,7 @@ const index = async (req, res) => {
 
 const show = async (req, res) => {
   try {
-    const planet = await Planets.findById(req.params.id)
+    const planet = await Planets.findById(req.params.id).populate("explorers")
     planet.plants.sort((a, b) => {
       const nameA = a.name.toUpperCase() // ignore upper and lowercase
       const nameB = b.name.toUpperCase() // ignore upper and lowercase
@@ -44,7 +45,17 @@ const show = async (req, res) => {
         return 1
       }
     })
-    res.render("planets/show", { planet })
+
+    const allExplorers = await Explorer.find()
+    const planetExplorers = planet.explorers
+    const availableExplorers = allExplorers.filter((explorer) => {
+      // console.log(planetExplorers)
+      if (!planetExplorers.some((e) => e.name === explorer.name)) {
+        return explorer
+      }
+    })
+    const explorers = availableExplorers
+    res.render("planets/show", { planet, planetExplorers, explorers })
   } catch (error) {
     console.log(error)
   }

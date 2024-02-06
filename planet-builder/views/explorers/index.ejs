@@ -1,0 +1,27 @@
+
+<%- include('../partials/header') %>
+
+
+<% if (explorers.length) { %>
+<h2>Explorers List</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% explorers.forEach(explorer => {%>
+      <tr>
+        <td><%= explorer.name %></a></td>
+        <td><%= explorer.age %></a></td>
+    <%});%> 
+  </tbody>
+</table>
+<% } else { %>
+  <h5>No plants Yet</h5>
+<% } %>
+
+
+<%- include('../partials/footer') %>

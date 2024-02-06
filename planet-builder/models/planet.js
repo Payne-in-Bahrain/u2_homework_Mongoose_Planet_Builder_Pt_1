@@ -29,6 +29,7 @@ const planetScema = new Schema(
     },
     hasWater: { type: Boolean },
     plants: [plantScema],
+    explorers: [{ type: Schema.Types.ObjectId, ref: "Explorer" }],
   },
   {
     timestamps: true,

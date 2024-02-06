@@ -1,0 +1,15 @@
+<%- include('../partials/header') %>
+
+<h2>Enter a New Explorer</h2>
+<form action="/explorers" method="POST">
+  <label>Name:
+    <input type="text" name="name">
+  </label><br>
+  <label>Age:
+    <input type="number" name="age">
+  </label><br>
+  <button type="submit">Add Explorer</button>
+</form>
+
+
+<%- include('../partials/footer') %>

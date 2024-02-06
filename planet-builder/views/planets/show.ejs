@@ -59,4 +59,40 @@
   <h5>No plants Yet</h5>
 <% } %>
 
+
+<h2>Enter a New Explorer</h2>
+<form action="/planets/<%= planet._id %>/explorers" method="POST">
+  <label>Name:
+    <select name="id">
+      <% explorers.forEach((explorer) => { %>
+        <option value="<%= explorer._id %>"><%= explorer.name %></option> 
+      <% }); %>
+    </select>
+  </label><br>
+  <button type="submit">Add Explorer</button>
+</form>
+
+
+<% if (planet.explorers.length) { %>
+<h2>Explorers List</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% planetExplorers.forEach(explorer => {%>
+      <tr>
+        <td><%= explorer.name %></a></td>
+        <td><%= explorer.age %></a></td>
+    <%});%> 
+  </tbody>
+</table>
+<% } else { %>
+  <h5>No Explorers Yet</h5>
+<% } %>
+
+
 <%- include('../partials/footer') %>

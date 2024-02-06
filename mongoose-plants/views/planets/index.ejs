@@ -4,16 +4,13 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Climate</th>
-      <th>Population</th>
+      <th>View</th>
     </tr>
   </thead>
   <tbody>
     <% planets.forEach ((planet) => { %> <!-- Write the line of EJS to iterate over movies using forEach -->
       <tr>
         <td><%= planet.name %></td>
-        <td><%= planet.climate %></td>
-        <td><%= planet.population %></td>
         <td><a href="/planets/<%= planet._id %>">DETAILS</a></td>
       </tr>
     <% }) %> <!-- Close the forEach using EJS here -->

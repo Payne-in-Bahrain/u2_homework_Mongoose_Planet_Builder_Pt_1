@@ -45,4 +45,27 @@
 <% } else { %>
   <h5>No Animals Yet</h5>
 <% } %>
+
+<br><br><h2>Add an explorer</h2>
+<form id="add-review-form" method="POST"
+  action="/planets/<%= planet._id %>/explorers">
+  <select name="explorerId">
+    <% availableExplorers.forEach((explorer) => { %>
+      <option value="<%= explorer._id %>"><%= explorer.name %></option> 
+    <% }); %>
+  </select>
+  <input type="submit" value="Add Explorer">
+</form>
+
+<!-- Display the cast -->
+<% if (planet.explorers.length) { %>
+  <h3>Explorers</h3>
+  <ul>
+    <% planet.explorers.forEach((explorer) => { %>
+      <li>Name: <%= explorer.name %> | Age: <%= explorer.age %></li>
+    <% }); %>
+  </ul>
+<% } else { %>
+  <h5>No Explorers Yet</h5>
+<% } %>
 <%- include('../partials/footer') %>

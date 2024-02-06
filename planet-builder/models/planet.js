@@ -16,7 +16,8 @@ const planetSchema = new Schema(
       default: 'Desert'
     },
     population: { type: Number, min: 0, max: 9999999 },
-    animals: [animalSchema]
+    animals: [animalSchema],
+    explorers: [{ type: Schema.Types.ObjectId, ref: 'Explorer' }]
   },
   {
     timestamps: true

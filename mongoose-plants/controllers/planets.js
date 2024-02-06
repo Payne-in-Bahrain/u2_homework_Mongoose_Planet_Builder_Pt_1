@@ -1,4 +1,6 @@
 const Planet = require('../models/planet');
+const Explorer = require('../models/explorer');
+
 
 const newPlanet = (req, res) => {
     let title = "Add new Planet";
@@ -33,8 +35,18 @@ const index = async (req, res) => {
 }
 
 async function show(req, res) {
-    const planet = await Planet.findById(req.params.id);
-    res.render('planets/show', { title: 'Planet Detail', planet });
+    const planet = await Planet.findById(req.params.id).populate('explorers');
+    const explorers = await Explorer.find({})
+    const planetExplorers = planet.explorers
+
+    const explorersName = planetExplorers.map((explorerMember) => explorerMember.name)
+
+    const availableExplorers = explorers.filter((explorer) => {
+        if(!explorersName.includes(explorer.name)){
+        return explorer
+        }
+    })
+    res.render('planets/show', { title: 'Planet Detail', planet, availableExplorers });
   }
 
 

@@ -2,10 +2,9 @@
 
 <h2>Enter a New Planet</h2>
 <form id="new-form" action="/planets" method="POST">
-  <label>Name:
+  <label>Name:</label>
     <input type="text" name="name">
-  </label><br>
-  <label>Climate
+  <label>Climate</label>
     <select name="climate">
       <option value="Oceanic">Oceanic</option>
       <option value="Tropical">Tropical</option>
@@ -13,11 +12,9 @@
       <option value="Desert" selected>Desert</option>
       <option value="Rainforest">Rainforest</option>
     </select>
-  </label><br>
-  <label>Population:
+  <label>Population:</label>
     <input type="number" name="population">
-  </label><br>
-  <button type="submit">Add Planet</button>
+    <input type="submit" value="Add Planet">
 </form>
 
 <%-include('../partials/footer.ejs')%>

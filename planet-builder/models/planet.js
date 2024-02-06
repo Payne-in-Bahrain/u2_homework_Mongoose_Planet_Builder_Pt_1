@@ -15,7 +15,8 @@ const planetSchema = new Schema({
     enum: ['Oceanic', 'Tropical', 'Arctic', 'Desert', 'Rainforest']
   },
   population: { type: Number, required: true, min: 0, max: 9999999 },
-  plant: [plantSchema]
+  plant: [plantSchema],
+  explorer: [{ type: Schema.Types.ObjectId, ref: 'Explorer' }]
 })
 
 module.exports = mongoose.model('Planet', planetSchema)

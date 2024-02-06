@@ -43,7 +43,29 @@
     </tbody>
   </table>
 <% } else { %>
-  <h5>No plants :c</h5>
+  <h5>No blants :c</h5>
+<% } %>
+
+<br><br><h2>Add an explorer</h2>
+<form method="POST" action="/planets/<%= planet._id %>/explorers">
+  <select name="explorerId">
+    <% availableExplorers.forEach((explorer) => { %>
+      <option value="<%= explorer._id %>"><%= explorer.name %></option> 
+    <% }); %>
+  </select>
+  <input type="submit" value="Add Explorer">
+</form>
+
+
+<% if (planet.explorer.length) { %>
+  <h3>Explorers</h3>
+  <ul>
+    <% planet.explorer.forEach((explorer) => { %>
+      <li><%= explorer.name %></li>
+    <% }); %>
+  </ul>
+<% } else { %>
+  <h5>No explorers Yet</h5>
 <% } %>
 
 

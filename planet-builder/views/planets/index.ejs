@@ -1,13 +1,14 @@
 <%- include('../partials/header') %>
-  <section>
+
+<h2 id :"all-planet">ALL Planet</h2>
   <% planets.forEach(planet => { %> 
-      <div>
-      <h2>Name: <%= planet.name %><br>
-      Population:   <%= planet.population %><br>
-      Climate:   <%= planet.climate %></h2>
-      </div>
+
+      <h2 class="planet-name"><a href="/planets/<%= planet._id %>"><%= planet.name %></a><br>
+</h2>
+      
+      
     <% }) %>
-</section>
+
 
 
 

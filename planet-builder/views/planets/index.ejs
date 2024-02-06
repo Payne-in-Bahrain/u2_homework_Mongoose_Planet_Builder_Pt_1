@@ -3,17 +3,18 @@
 <table id="list">
   <thead>
     <tr>
-      <th>Planet</th>
-      <th>climate</th>
-      <th>population</th>
+      <th>Planets</th>
+      
       <th></th>
     </tr>
   </thead>
   <tbody>
     <% planets.forEach(function(m) { %>
       <tr>
-        <td><%= m.planet %></td>
-        <td><a href="/planets/<%= m._id %>">DETAILS</a></td>
+        <td><a href="/planets/<%= m._id %>"><%= m.name %></a></td>
+      
+
+        
       </tr>
       <% }); %>
     </tbody>

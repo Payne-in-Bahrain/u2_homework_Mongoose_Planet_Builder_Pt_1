@@ -14,7 +14,7 @@ async function index(req, res) {
 
 async function show(req, res) {
   const planet = await Planet.findById(req.params.id)
-  res.render("planets/show", { title: "Planet Detail", movie })
+  res.render("planets/show", { title: "Planet Detail", planet })
 }
 
 function newPlanet(req, res) {

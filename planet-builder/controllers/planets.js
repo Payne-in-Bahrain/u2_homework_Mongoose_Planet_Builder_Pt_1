@@ -20,7 +20,7 @@ async function show(req, res) {
 function newPlanet(req, res) {
   // We'll want to be able to render an
   // errorMsg if the create action fails
-  res.render("planets/new", { title: "Add planets", errorMsg: "" })
+  res.render("planets/new", { title: "Add Planet", errorMsg: "" })
 }
 
 async function create(req, res) {

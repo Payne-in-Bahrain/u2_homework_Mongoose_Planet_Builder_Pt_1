@@ -1,12 +1,24 @@
 <%- include('../partials/header') %>
 
+
+
+<br><br><br>
 <section id="show-page">
-  <div>Planet: </div>
-  <div><%= planet.name %></div>
-  <div>climate : </div>
-  <div><%= planet.climate %></div>
-  <div>population: </div>
-  <div><%= planet.population %></div>
+
+  <div class="container">
+
+  <div class="card">
+    <p class="heading">
+      <%= planet.name %> 
+    </p>
+    <p>
+      Climate : <%= planet.climate %> <br>
+      Population  :<%= planet.population %>
+    </p>
+   </div>
+</div>
+
+
   
 </section>
 </section>

@@ -1,23 +1,26 @@
 <%- include('../partials/header') %>
 
-<table id="list">
-  <thead>
-    <tr>
-      <th>Planets</th>
-      
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
+
+  <section>
     <% planets.forEach(function(m) { %>
-      <tr>
-        <td><a href="/planets/<%= m._id %>"><%= m.name %></a></td>
-      
+
+      <div class="boxPlanate">
+        <a href="/planets/<%= m._id %>"
+        }><button class="buttonPlanate" ><%= m.name %></button></a>
+  <div class="spacePlanate">
+    <span style="--i: 31" class="starPlanate"></span>
+    <span style="--i: 12" class="starPlanate"></span>
+    <span style="--i: 57" class="starPlanate"></span>
+    <span style="--i: 93" class="starPlanate"></span>
+    <span style="--i: 23" class="starPlanate"></span>
+    <span style="--i: 70" class="starPlanate"></span>
+    <span style="--i: 6" class="starPlanate"></span>
+  </div>
+</div>
 
         
-      </tr>
+     
       <% }); %>
-    </tbody>
-  </table>
-  
+ 
+  </section>
 <%- include('../partials/footer') %>

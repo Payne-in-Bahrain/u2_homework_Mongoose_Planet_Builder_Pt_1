@@ -1,9 +1,10 @@
 <%- include('../partials/header') %>
 
 <form id="new-form" action="/planets" method="POST">
-  <label>planet Name:</label>
-  <input type="text" name="name">
-  <label>climate:</label>
+  
+<input type="text" name="name" class="input" placeholder="Planet Name">
+<br><br>
+
   <select name="climate">
     <option value="Oceanic">Oceanic</option>
     <option value="Tropical">Tropical</option>
@@ -12,11 +13,16 @@
     <option value="Rainforest">Rainforest</option>
 
   </select>
-  <label>population</label>
-  <input type="number" name="population">
+  <br><br>
 
- 
-  <input type="submit" value="Add Planet">
+  <input type="text" name="population" class="input" placeholder="Planet population">
+  <br><br>  <br><br>
+
+<div class="buttonMiddle">
+  <button class="buttonADD"  type="submit" value="Add Planet">
+    Add Plante
+  </button>
+</div>
 </form>
 
 <%- include('../partials/footer') %>

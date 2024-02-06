@@ -2,21 +2,89 @@
 
 
 
-<br><br><br>
-<section id="show-page">
 
-  <div class="container">
+<div class="cardInTheMiddle">
+<div class="myCard">
+  <div class="innerCard">
+      <div class="frontSide">
+          <p class="title">
 
-  <div class="card">
-    <p class="heading">
-      <%= planet.name %> 
-    </p>
-    <p>
-      Climate : <%= planet.climate %> <br>
-      Population  :<%= planet.population %>
-    </p>
-   </div>
+           Name : <%= planet.name %>  <br>
+            Climate:<%= planet.climate %>  <br>
+            Population  :<%= planet.population %>
+
+
+          </p>
+      </div>
+      <div class="backSide">
+        <% if (planet.plants.length) { %>
+          <% planet.plants.forEach(function(r) { %>
+
+          <p class="title">
+           Name :<%= r.name %><br>
+          Color : <%= r.color %><br>
+          poisonous: <%= r.poisonous %>
+
+          </p>
+          <% }); %>
+
+          <% } else { %>
+            <h5>No plants Yet</h5>
+          <% } %>
+
+
+      </div>
+  </div>
 </div>
+<br>
+</div>
+
+
+
+
+
+
+<br><br><h2>Plants</h2>
+<form id="add-plants-form" method="POST"
+  action="/planets/<%= planet._id %>/plants">
+  <input name="name" type="text" class="input" placeholder="Plant Name"></input>
+  <br><br>
+  <input name="color" type="text" class="input" placeholder="Plant Color"></input>
+  <br><br>
+
+  <h2>poisonous</h2>
+
+  <select name="poisonous">
+    <option value="yes">Yes</option>
+    <option value="no">No</option>
+  </select>
+  <br><br>
+  <button class="buttonAddPlant" type="submit" value="Add Plant">Add Plant</button>
+
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
   

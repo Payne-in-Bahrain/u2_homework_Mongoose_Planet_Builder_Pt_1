@@ -1,4 +1,5 @@
 const Planet = require("../models/planet");
+const Explorer = require("../models/explorer");
 
 const planetIndex = async (req, res) => {
   const title = "Discovered Planets";
@@ -30,8 +31,10 @@ const createPlanet = async (req, res) => {
 
 const planetDetails = async (req, res) => {
   const planetFound = await Planet.findOne({_id: req.params.id});
+  const allExplorers = await Explorer.find({});
+  console.log("🚀 ~ planetDetails ~ allExplorers:", allExplorers)
   
-  res.render("planets/show", {planet: planetFound});
+  res.render("planets/show", {planet: planetFound, explorer: allExplorers});
 }
 
 module.exports = {

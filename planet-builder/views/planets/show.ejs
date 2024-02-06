@@ -38,4 +38,16 @@
     </select>
     <button type="submit">Save</button>
   </form>
+  <hr>
+  <h1>Add a Crew Member</h1>
+  <form action="/planets/<%= planet._id %>/explorers">
+    <label for="crew"></label><select name="crew" id="">
+      <% explorer.forEach((value)=> { %>
+        <option value="<%= value._id %>">
+          <%= value.name %>
+        </option>
+        <% }); %>
+    </select>
+    <button type="submit">Add Crew Member</button>
+  </form>
   <%- include('../partials/footer') %>

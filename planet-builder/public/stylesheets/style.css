@@ -15,7 +15,7 @@ nav {
   width: 80%;
 }
 table {
-  width: 80%;
+  width: 100%;
   text-align: center;
 }
 a {
@@ -46,4 +46,16 @@ button {
   justify-content: center;
   align-items: center;
   gap: 3%;
+}
+
+.table-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+th,
+td {
+  padding: 15px;
 }

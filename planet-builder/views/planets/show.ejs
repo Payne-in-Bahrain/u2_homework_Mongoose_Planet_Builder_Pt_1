@@ -20,6 +20,28 @@
   </tbody>
 </table>
 
+<% if (planet.explorers.length) { %>
+  <h2>Explorers List</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% planet.explorers.forEach(explorer => {%>
+        <tr>
+          <td><%= explorer.name %></a></td>
+          <td><%= explorer.age %></a></td>
+      <%});%> 
+    </tbody>
+  </table>
+  <% } else { %>
+    <h5>No Explorers Yet</h5>
+  <% } %>
+  
+
 <br><br><h2>add a plant</h2>
 <form id="add-review-form" method="POST"
   action="/planets/<%= planet._id %>/plants">
@@ -72,27 +94,6 @@
   <button type="submit">Add Explorer</button>
 </form>
 
-
-<% if (planet.explorers.length) { %>
-<h2>Explorers List</h2>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Age</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% planetExplorers.forEach(explorer => {%>
-      <tr>
-        <td><%= explorer.name %></a></td>
-        <td><%= explorer.age %></a></td>
-    <%});%> 
-  </tbody>
-</table>
-<% } else { %>
-  <h5>No Explorers Yet</h5>
-<% } %>
 
 
 <%- include('../partials/footer') %>

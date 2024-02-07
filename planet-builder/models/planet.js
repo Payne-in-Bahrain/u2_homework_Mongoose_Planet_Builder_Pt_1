@@ -22,6 +22,7 @@ const planteSchema = new mongoose.Schema(
       default: "Rainforest",
     },
     population: { type: Number, min: 0, max: 9999999 },
+    explorer: [{ type: Schema.Types.ObjectId, ref: 'Explorer' }],
     plants: [plantSchema],
   },
   {

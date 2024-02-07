@@ -66,7 +66,39 @@
 
 
 
+<br><br><h2>Add a Explorer</h2>
+<form id="add-explorer-form" method="POST"
+  action="/planets/<%= planet._id %>/explorers">
+  <select name="explorerId">
+    <% availableExplorers.forEach((explorer) => { %>
+      <option value="<%= explorer._id %>"><%= explorer.name %></option> 
+    <% }); %>
+  </select>
+  <button class="buttonAddPlant" type="submit" value="Add Explorer">Add Explorer</button>
 
+</form>
+
+<br><br><br><br>
+
+
+
+<div id="centerExplorersDiv">
+<div class="unique-card">
+  <div class="background-overlay"></div>
+  <div class="card-content">
+    <% if (planet.explorer.length) { %>
+      <% planet.explorer.forEach((expl) => { %>
+    <div class="card-title"><%= expl.name %></div>
+    <div class="card-description"><%= expl.age %></div>
+    <% }); %>
+    <% } else { %>
+      <div class="card-title">No Explorers Yet</div>
+
+      <% } %>
+
+  </div>
+</div>
+</div>
 
 
 

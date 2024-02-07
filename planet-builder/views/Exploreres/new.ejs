@@ -1,0 +1,25 @@
+<%- include('../partials/header') %>
+
+<div>
+  <h2>Before adding, please ensure that the Explorer is not in the following list: </h2></div>
+<section id="badge-container">
+  <% explorers.forEach(function(p) { %>
+
+    <article class="badge">
+
+     <b>
+      <%= p.name %>
+    </b>
+    </article>
+  <% }) %>
+</section>
+
+<form id="add-explorer-form" action="/explorers" method="POST">
+  <input type="text" name="name"  type="text" class="input" placeholder="Explorer Name">
+ 
+  <input type="text" name="age"  type="text" class="input" placeholder="Explorer Age">
+
+  <button class="buttonAddPlant" type="submit" value="Add Explorer">Add Explorer</button>
+</form>
+
+<%- include('../partials/footer') %>

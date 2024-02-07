@@ -1,4 +1,5 @@
 const Planet = require("../models/planet")
+const explorer = require('../models/explorer');
 
 module.exports = {
   index,
@@ -13,9 +14,19 @@ async function index(req, res) {
 }
 
 async function show(req, res) {
-  const planet = await Planet.findById(req.params.id)
-  res.render("planets/show", { title: "Planet Detail", planet })
+  const planet = await Planet.findById(req.params.id).populate('explorer')
+  const explorers = await explorer.find({})
+const planetExplorer = planet.explorer
+const explorerNames = planetExplorer.map((explorerMember) => explorerMember.name)
+const availableExplorers = explorers.filter((explorer)=>{
+  console.log(typeof explorer._id)
+  if(!explorerNames.includes(explorer.name)) {
+    return explorer;
+  }
+})
+  res.render("planets/show", { title: "Planet Detail", planet , availableExplorers })
 }
+
 
 function newPlanet(req, res) {
   // We'll want to be able to render an

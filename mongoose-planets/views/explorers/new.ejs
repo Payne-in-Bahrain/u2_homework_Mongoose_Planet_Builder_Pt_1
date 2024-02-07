@@ -1,0 +1,25 @@
+<%- include('../partials/header') %>
+
+
+<h2>Add Explorer</h2>
+<form id="add-performer-form" action="/explorers" method="POST">
+  <input class="newInputs" type="text" name="name" placeholder="Explorer Name">
+  <br>
+  <input class="newInputs" type="number" name="age" placeholder="Age">
+  <br>
+  <input id="submit" type="submit" value="Add Explorers">
+</form>
+
+<br>
+<br>
+<h2>All Explorers</h2>
+<section id="badge-container">
+  <% explorers.forEach(function(p) { %>
+    <article class="badge"><%= p.name %></article>
+  <% }) %>
+</section>
+
+
+
+
+<%- include('../partials/footer') %>

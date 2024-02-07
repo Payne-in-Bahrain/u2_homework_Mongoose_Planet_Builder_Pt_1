@@ -1,0 +1,88 @@
+<%- include('../partials/header')  %>
+
+<h2 >Planet Details</h2>
+
+<div id="details">
+  <div class="planetDetails">Name: <%= planet.name %></div>
+
+  <div class="planetDetails">climate: <%= planet.climate %></div>
+
+  <div class="planetDetails">population: <%= planet.population %></div>
+</div>
+
+
+<!--Current Plants-->
+
+<% if (planet.plants.length) { %>
+  <h3>plants</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>name</th>
+        <th>color</th>
+        <th>poisonous</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% planet.plants.forEach((r)=> { %>
+        <tr>
+          <td><%= r.name %></td>
+          <td><%= r.color %></td>
+          <td><%= r.poisonous %></td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+<% } else { %>
+  <h5>No plants Yet</h5>
+<% } %>
+
+<!--Current Explorers-->
+<% if (planet.explorer.length) { %>
+  <h3>Explorers</h3>
+  <section id="badge-container">
+    <% planet.explorer.forEach((explorer) => { %>
+      <article class="badge"><%= explorer.name %></article>
+    <% }); %>
+  </section>
+<% } else { %>
+  <h5>No Explorers Yet</h5>
+<% } %>
+
+
+
+<hr>
+
+<!---Add Plants-->
+
+<h2 class="addMore">Add more Plants</h2>
+<form method="POST" action="/planets/<%= planet._id %>/plants">
+  <input class="newInputs" type="text" name="name" placeholder="Plant Name">
+
+  <input class="newInputs" type="text" name="color" placeholder="Color">
+
+  <label style="font-size: 20px;">poisonous:</label>
+  <input type="checkbox" name="poisonous" checked style="width: 30px; height: 30px;">
+
+  <input id="submit" type="submit" value="Add plants">
+</form>
+
+
+
+
+<!---Add Explorers-->
+<br><br><h2 class="addMore">Add more Explorer</h2>
+<form method="POST"
+  action="/planets/<%= planet._id %>/explorers">
+  <select name="explorerId" class="newInputs">
+    <% availableExplorers.forEach((explorer) => { %>
+      <option value="<%= explorer._id %>"><%= explorer.name %></option> 
+    <% }); %>
+  </select>
+  <input type="submit" value="Add Explorer" id="submit">
+</form>
+
+
+
+
+<%- include('../partials/footer')  %>

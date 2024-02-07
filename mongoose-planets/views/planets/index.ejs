@@ -1,23 +1,11 @@
 <%- include('../partials/header') %>
 
 <h2>Planets List</h2>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Climate</th>
-      <th>Population</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% planets.forEach((planet) => { %>
-      <tr>
-        <td><%= planet.name %></td>
-        <td><%= planet.climate %></td>
-        <td><%= planet.population %></td>
-      </tr>
-      <% }) %>
-  </tbody>
-</table>
+
+<ol>
+  <% planets.forEach((planet) => { %>
+  <li id="planetName"><a href="/planets/<%= planet._id %>">&#127757; <%= planet.name %></a></li>
+  <% }) %>
+</ol>
 
 <%- include('../partials/footer') %>

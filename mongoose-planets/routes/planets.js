@@ -10,6 +10,8 @@ router.get('/new', planetsCtrl.newPlanet)
 //POST /planets
 router.post('/', planetsCtrl.create)
 
+router.get('/:id', planetsCtrl.show)
+
 router.get('/', planetsCtrl.index)
 
 module.exports = router

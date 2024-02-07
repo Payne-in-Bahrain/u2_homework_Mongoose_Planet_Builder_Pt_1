@@ -17,7 +17,8 @@ const planetSchema = new Schema({
   planetName: { type: String, required: true },
   civilization: { type: String, required: true },
   planetRadius: { type: Number, min: 100, max: 20000 },
-  enviroment: [enviromentSchema]
+  enviroment: [enviromentSchema],
+  explorers: [{ type: Schema.Types.ObjectId, ref: 'Explorer' }]
 })
 
 module.exports = mongoose.model('Planet', planetSchema)

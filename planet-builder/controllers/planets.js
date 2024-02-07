@@ -1,4 +1,5 @@
 const Planet = require('../models/planet')
+const Explorer = require('../models/explorer')
 
 const newPlanet = (req, res) => {
   const title = 'New Planet'
@@ -31,6 +32,27 @@ const index = async (req, res) => {
     console.log(error)
     res.redirect('/')
   }
+}
+
+async function show(req, res) {
+  const planet = await Planet.findById(req.params.id).populate('explorers')
+  const explorers = await Explorer.find({})
+  const planetExplorers = planet.explorers
+  //create a new array of just the names from the movieCast
+  const explorerName = planetExplorers.map(
+    (explorerMember) => explorerMember.name
+  )
+
+  const availableExplorers = explorers.filter((explorer) => {
+    if (!explorerName.includes(explorer.name)) {
+      return explorer
+    }
+  })
+  res.render('planets/show', {
+    title: 'Planet Detail',
+    planet,
+    availableExplorers
+  })
 }
 
 module.exports = {

@@ -1,0 +1,28 @@
+<%- include('../partials/header.ejs') %>
+
+<div>Before Creating Explorer, please insure explorer does not exist</div>
+
+<section>
+  <% explorers.forEach(function(p) { %>
+  <article>Name: <%= p.name %></article>
+  <article>Job: <%= p.job %></article>
+  <br />
+  <% }) %>
+</section>
+
+<form id="add-performer-form" action="/explorers" method="POST">
+  <label>Name:</label>
+  <input type="text" name="name" />
+  <label
+    >Job
+    <select name="job">
+      <option value="Warrior">Warrior</option>
+      <option value="Scout">Scout</option>
+      <option value="Esper">Esper</option>
+      <option value="Archeologist">Archeologist</option>
+    </select>
+  </label>
+  <input type="submit" value="Add Explorer" />
+</form>
+
+<%- include('../partials/footer.ejs')%>

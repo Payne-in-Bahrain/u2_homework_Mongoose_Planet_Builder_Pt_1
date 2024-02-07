@@ -1,10 +1,10 @@
 <%- include('../partials/header') %>
+<h1>Add Planet</h1>
 <form action="/planets" method="POST">
-  <label for="name">Name</label>
-  <input type="text" name="name">
+  <input type="text" name="name" placeholder="name">
   <br>
-  <label for="climate">Climate</label>
   <select name="climate">
+    <option disabled>Select Climate</option>
     <option value="oceanic">Oceanic</option>
     <option value="tropical">Tropical</option>
     <option value="arctic">Arctic</option>
@@ -12,8 +12,7 @@
     <option value="rainforest">Rainforest</option>
   </select>
   <br>
-  <label for="population">Population</label>
-  <input type="number" name="population" min="0" max="9999999">
+  <input type="number" name="population" min="0" max="9999999" placeholder="population">
   <br>
   <button type="submit">Submit</button>
 </form>

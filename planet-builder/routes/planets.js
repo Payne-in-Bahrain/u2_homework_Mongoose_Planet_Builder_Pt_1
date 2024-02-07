@@ -7,6 +7,8 @@ router.get('/', planetCtrl.index)
 
 router.get('/new', planetCtrl.new)
 
+router.get('/:id', planetCtrl.show)
+
 router.post('/', planetCtrl.create)
 
 module.exports = router

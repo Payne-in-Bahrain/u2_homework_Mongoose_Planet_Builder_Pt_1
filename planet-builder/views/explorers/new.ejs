@@ -1,0 +1,17 @@
+<%- include('../partials/header') %>
+<h1>Explorers</h1>
+<% explorers.forEach((explorer) => { %>
+  <ul>
+    <li><%= explorer.name %></li>
+  </ul>
+<% }) %>
+
+<h1>Add Explorer</h1>
+<form action="/explorers" method="POST">
+  <input type="text" name="name" placeholder="Name">
+  <br>
+  <input type="number" name="age" placeholder="Age">
+  <br>
+  <button type="submit">Submit</button>
+</form>
+<%- include('../partials/footer') %>

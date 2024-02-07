@@ -1,6 +1,9 @@
 <%- include('../partials/header') %>
 <h1>Planets</h1>
-<% planets.forEach((planet) => { %>
-  <p><%= planet.name %> <%= planet.climate %> <%= planet.population%></p>
-<% }) %>
+<ol class="planets">
+  <% planets.forEach((planet) => { %>
+    <li><a href="/planets/<%= planet._id %>">
+      <%= planet.name %></a></li>
+  <% }) %>
+    </ol>
 <%- include('../partials/footer') %>

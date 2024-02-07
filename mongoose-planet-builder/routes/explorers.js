@@ -9,13 +9,20 @@ const explorersCtrl = require('../controllers/explorers')
 
 router.get('/explorers/new', explorersCtrl.newExplorer)
 
-// POST /performers (create functionality)
+// GET /explorers
+
+router.get('/explorers', explorersCtrl.index)
+
+// POST /explorers (create functionality)
 
 router.post('/explorers', explorersCtrl.create)
+
 
 // POST /movies/:id/performers (associate performers with movies)
 
 router.post('/planets/:id/explorers', explorersCtrl.addToAstro)
+
+
 
 // POST /explorers
 //-------------------------------------------------------------------//

@@ -12,6 +12,17 @@ const newExplorer = async (req, res) => {
   res.render('explorers/new', { title: 'Add Explorer', explorers })
 }
 
+const index = async (req, res) => {
+  const title = 'All Explorers'
+  try {
+    const explorerList = await Explorer.find({})
+    res.render('explorers/index.ejs', { explorerList, title })
+  } catch (error) {
+    console.log(error)
+    res.redirect('/')
+  }
+}
+
 const create = async (req, res) => {
   try {
     await Explorer.create(req.body)
@@ -40,5 +51,6 @@ const addToAstro = async (req, res) => {
 module.exports = {
   newExplorer,
   create,
-  addToAstro
+  addToAstro,
+  index
 }

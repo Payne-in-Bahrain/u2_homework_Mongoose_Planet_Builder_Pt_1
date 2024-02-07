@@ -1,0 +1,24 @@
+<%- include('../partials/header') %>
+<br>
+<br>
+<br>
+<br>
+<div>Before adding, please ensure that the Performer is not in the following list:</div>
+<br>
+<section id="badge-container">
+  <% explorers.forEach(function(p) { %>
+    <article class="badge"><%= p.name %></article>
+  <% }) %>
+  <br>
+  <br>
+</section>
+
+<form id="add-performer-form" action="/explorers" method="POST">
+  <label>Name:</label>
+  <input type="text" name="name">
+  <label>Age:</label>
+  <input type="text" name="age">
+  <input type="submit" value="Add Explorer">
+</form>
+
+<%- include('../partials/footer') %>

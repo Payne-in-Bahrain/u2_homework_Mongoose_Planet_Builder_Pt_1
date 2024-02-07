@@ -1,30 +1,23 @@
 <%- include('../partials/header') %>
 
-<h2>Planet List</h2>
+<h2>Explorer List</h2>
 <table>
   <thead>
     <tr>
       <th>Name</th>
-      <th>Climate</th>
-      <th>Population</th>
-      <th>Aliens</th>
-      <th>View details</th>
+      <th>Age</th>
     </tr>
   </thead>
   <tbody>
 
-    <% planets.forEach((m)=>{ %>
-     
+    <% explorers.forEach((m)=>{ %>
 
-
-  
   
       <tr>
         <td><%= m.name %></td>
-        <td><%= m.climate %></td>
-        <td><%= m.population %></td>
+        <td><%= m.age %></td>
+  
                   
-        <td><%= m.Possible_alien_life ? "yes":"Nope" %></td>
         <td> <a href="/planets/<%= m._id %>">Details</a></td>
       </tr>
       

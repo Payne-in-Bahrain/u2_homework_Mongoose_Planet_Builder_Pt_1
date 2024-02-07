@@ -1,0 +1,91 @@
+<%- include('../partials/header') %>
+<br> 
+<br>
+
+<section id="show-page">
+  <div><strong>Planet name</strong></div>
+  <div><%= planet.name %></div>
+  <div><strong>population </strong></div>
+  <div><%= planet.population %></div>
+  <div><strong>Climate </strong></div>
+  <div><%= planet.climate %></div>
+
+  <div><strong>Alien life</strong></div>
+  <div><%= planet.Possible_alien_life ? 'Yes' : 'Not yet' %></div>
+</section>
+
+
+<br><br><h2>plants</h2>
+<form id="add-plant-form" method="POST"
+  action="/planets/<%= planet._id %>/plant">
+  <label>Add plant:</label>
+  <textarea name="plant"></textarea>
+  <label>Add plant color:</label>
+  <textarea name="color"></textarea>
+  <label>Poisonous:
+    <input type="checkbox" name="poisonous" checked>
+  </label><br>
+  <input type="submit" value="Add plant">
+
+
+  
+
+</form>
+
+
+
+  
+<% if (planet.plant.length) { %>
+  <table id="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Color</th>
+        <th>Poisonous</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% planet.plant.forEach((r)=> { %>
+        <tr>
+          <td><%= r.plant %></td>
+          <td><%= r.color %></td>
+          <td><%= r.poisonous ? 'Yes' : 'No' %></td>
+  
+       
+
+      
+
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+<% } else { %>
+  <h5>No details yet </h5>
+<% } %>
+
+
+<br><br><h2>Add an Explorer</h2>
+<form id="add-review-form" method="POST"
+  action="/planets/<%= planet._id %>/explorers">
+  <select name="explorerId">
+    <% availableExplorers.forEach((explorer) => { %>
+      <option value="<%= explorer._id %>"><%= explorer.name %></option> 
+    <% }); %>
+  </select>
+  <input type="submit" value="Add Performer">
+</form>
+
+<!-- Display the cast -->
+<% if (planet.explorers.length) { %>
+  <h3>Explorers</h3>
+  <ul>
+    <% planet.explorers.forEach((explorer) => { %>
+      <li><%= explorer.name %></li>
+    <% }); %>
+  </ul>
+<% } else { %>
+  <h5>No Performers Yet</h5>
+<% } %>
+
+
+<%- include('../partials/footer') %>

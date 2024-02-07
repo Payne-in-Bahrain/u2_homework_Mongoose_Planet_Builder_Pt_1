@@ -7,5 +7,6 @@ const planetsCtrl = require('../controllers/planets')
 router.get('/new', planetsCtrl.new)
 router.post('/', planetsCtrl.create)
 router.get('/', planetsCtrl.index)
+router.get('/:id', planetsCtrl.show)
 
 module.exports = router

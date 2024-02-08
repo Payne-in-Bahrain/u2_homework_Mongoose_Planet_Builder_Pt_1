@@ -50,5 +50,25 @@
 <%} else { %>
   <h5>No Animals Yet</h5>
   <% } %>
+  <h2>Add an Explorer</h2>
+<form method="POST"
+  action="/planets/<%= planet._id %>/explorers">
+  <select name="selectedExplorer">
+    <% avalibleExplorer.forEach((explorer) => { %>
+      <option value="<%= explorer._id %>"><%= explorer.name %></option>
+    <% }); %>
+  </select>
+  <input type="submit" value="Add Explorer">
+</form>
+<% if (planet.explorer.length) { %>
+  <h3>Explorers</h3>
+  <ul>
+    <% planet.explorer.forEach((e) => { %>
+      <li><%= e.name %></li>
+    <% }); %>
+  </ul>
+<% } else { %>
+  <h5>No Explorers Yet</h5>
+<% } %>
 
 <%- include('../partials/footer') %>

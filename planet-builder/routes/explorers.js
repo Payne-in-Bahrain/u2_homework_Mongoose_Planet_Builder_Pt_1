@@ -5,7 +5,7 @@ const explorersCtrl = require('../controllers/explorers');
 // This router is mounted to a "starts with" path of '/'
 
 // GET /performers/new (new functionality)
-router.get('/explorers/new', explorersCtrl.new);
+router.get('/explorers/new', explorersCtrl.newExplorer);
 // POST /performers (create functionality)
 router.post('/explorers', explorersCtrl.create);
 

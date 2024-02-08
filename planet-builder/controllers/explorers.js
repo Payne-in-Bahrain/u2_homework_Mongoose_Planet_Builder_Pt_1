@@ -18,7 +18,7 @@ async function create(req, res) {
   res.redirect('/explorers/new');
 }
 
-const addToTeam = async(req, res) {
+const addToTeam = async(req, res)=> {
   try {
     await Planet.findById(req.params.id);
     planet.team.push(req.body.preformerId);
@@ -27,8 +27,7 @@ const addToTeam = async(req, res) {
   } catch(erro) {
    console.log(erro);
    res.redirect('/planets');
-  }
-  
+  } 
 }
 
 

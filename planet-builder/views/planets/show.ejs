@@ -27,27 +27,39 @@
       </ul>
       <% } %>
   </h3>
-  <h1>Record a Plant</h1>
-  <form action="/planets/<%= planet._id %>/new" method="POST">
-    <label for="vegName">Plant Name: </label><input type="text" name="vegName" id="">
-    <label for="color"></label>Color<input type="text" name="color" id="">
-    <label for="poisonous">Poisonous</label>
-    <select name="poisonous" id="">
-      <option value="true">Yes</option>
-      <option value="false">no</option>
-    </select>
-    <button type="submit">Save</button>
-  </form>
-  <hr>
-  <h1>Add a Crew Member</h1>
-  <form action="/planets/<%= planet._id %>/explorers" method="POST">
-    <label for="crew"></label><select name="crew" id="">
-      <% explorer.forEach((value)=> { %>
-        <option value="<%= value._id %>">
+  <h1>Crew Members</h1>
+  <% if(planet.crew.length> 0) { %>
+    <ul>
+      <% planet.crew.forEach((value)=> { %>
+        <li>
           <%= value.name %>
-        </option>
+        </li>
         <% }); %>
-    </select>
-    <button type="submit">Add Crew Member</button>
-  </form>
-  <%- include('../partials/footer') %>
+          <% } else { %>
+            <li>No Crew Assigned</li>
+            <% } %>
+    </ul>
+    <h1>Record a Plant</h1>
+    <form action="/planets/<%= planet._id %>/new" method="POST">
+      <label for="vegName">Plant Name: </label><input type="text" name="vegName" id="">
+      <label for="color"></label>Color<input type="text" name="color" id="">
+      <label for="poisonous">Poisonous</label>
+      <select name="poisonous" id="">
+        <option value="true">Yes</option>
+        <option value="false">no</option>
+      </select>
+      <button type="submit">Save</button>
+    </form>
+    <hr>
+    <h1>Add a Crew Member</h1>
+    <form action="/planets/<%= planet._id %>/explorers" method="POST">
+      <label for="crew"></label><select name="crew" id="">
+        <% explorer.forEach((value)=> { %>
+          <option value="<%= value._id %>">
+            <%= value.name %>
+          </option>
+          <% }); %>
+      </select>
+      <button type="submit">Add Crew Member</button>
+    </form>
+    <%- include('../partials/footer') %>

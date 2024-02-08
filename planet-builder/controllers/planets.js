@@ -8,7 +8,6 @@ const planetIndex = async (req, res) => {
     const planets = await Planet.find({});
     res.render("planets/index", {planets, title});
   } catch (error) {
-    console.log("🚀 ~ index ~ error:", error)
     res.redirect("/");
   }
 }
@@ -24,17 +23,25 @@ const createPlanet = async (req, res) => {
     console.log(req.body);
     res.redirect("/planets");
   } catch (error) {
-    console.log("🚀 ~ newPlanet ~ error:", error)
     res.send(error.message);
   }
 }
 
 const planetDetails = async (req, res) => {
-  const planetFound = await Planet.findOne({_id: req.params.id});
+  const planetFound = await Planet.findOne({_id: req.params.id}).populate("crew");
   const allExplorers = await Explorer.find({});
-  console.log("🚀 ~ planetDetails ~ allExplorers:", allExplorers)
+
+  const crew = planetFound.crew.map(value => value.name);
   
-  res.render("planets/show", {planet: planetFound, explorer: allExplorers});
+  // maybe there is a better way to do the following, but this is what I know right now
+  const availableCrew = allExplorers.filter((value) => {
+    if(!crew.includes(value.name)) {
+      return value;
+    }
+  });
+
+  
+  res.render("planets/show", {planet: planetFound, explorer: availableCrew});
 }
 
 module.exports = {

@@ -1,0 +1,12 @@
+<%- include('../partials/header') %>
+  <h1>All Explorers</h1>
+  <ul>
+    <% explorers.forEach((value)=> { %>
+
+      <li>
+        Name: <%= value.name %> | Age: <%= value.age %>
+      </li>
+
+      <% }); %>
+  </ul>
+  <%- include('../partials/footer') %>

@@ -10,7 +10,7 @@ var indexRouter = require("./routes/index")
 var usersRouter = require("./routes/users")
 const planetRouter = require("./routes/planets")
 const plantRouter = require("./routes/plants")
-
+const explorersRouter = require('./routes/explorers')
 var app = express()
 
 // view engine setup
@@ -27,7 +27,7 @@ app.use("/", indexRouter)
 app.use("/users", usersRouter)
 app.use("/planets", planetRouter)
 app.use("/", plantRouter)
-
+app.use('/',explorersRouter)
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   next(createError(404))

@@ -16,6 +16,7 @@ const planetSchema = new Schema({
   },
   population: Number,
   plants: [plantSchema],
+  explorer: [{type: Schema.Types.ObjectId, ref: "Explorer"}]
 })
 
 module.exports = mongoose.model("planet", planetSchema)

@@ -33,13 +33,9 @@ const planetSchema = new Schema(
       min: 0,
       max: 9999999
     },
-    plants: [plantSchema]
+    plants: [plantSchema],
+    explorers: [{ type: Schema.Types.ObjectId, ref: 'Explorer' }]
   },
   { timestamps: true }
 )
 module.exports = mongoose.model('Planet', planetSchema)
-//{
-//   type: String,
-//   required: true,
-//   enum: ['G', 'PG', 'PG-13', 'R']
-// },

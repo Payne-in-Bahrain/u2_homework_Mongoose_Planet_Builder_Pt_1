@@ -40,6 +40,18 @@
   <%}%>
 </section>
 <section>
+  <% if (planet.explorers.length) { %>
+    <h3>Explorers in <%=planet.name%>:</h3>
+    <ul>
+      <% planet.explorers.forEach((explorer) => { %>
+        <li class="explorername"><%= explorer.name %></li>
+      <% }); %>
+    </ul>
+  <% } else { %>
+    <h5>No Explorers Yet</h5>
+  <% } %>
+  </section>
+<section>
   <h2>Add Plants</h2>
   <form id="add-plant-form" method="POST" action="/planets/<%=planet._id%>/plants">
   <input type="text" name="name" placeholder="Name">
@@ -55,5 +67,38 @@
 
   </form>
 </section>
+
+
+  <h3>Explorers in other planets:</h3>
+  <br>
+<div class="table-div ">
+
+  <table>
+    <thead>
+      <th>Explorer's Name</th>
+      <th>Explorer's Age</th>
+    </thead>
+    <tbody>
+      <%availableExplorers.forEach((e)=>{%>
+      <tr>
+        <td><%= e.name %></td>
+        <td><%= e.age %></td>
+      </tr>
+      <%})%>
+    </tbody>
+  </table>
+  </div>
+<br><br><h3>Add an explorer</h3>
+<form id="add-explorer-form" method="POST"
+  action="/planets/<%= planet._id %>/explorers">
+  <select name="explorerId">
+    <% availableExplorers.forEach((explorer) => { %>
+      <option value="<%= explorer._id %>"><%= explorer.name %></option> 
+    <% }); %>
+  </select>
+  <input type="submit" value="Add Explorer">
+</form>
+
+
 
 <%- include('../partials/footer') %>

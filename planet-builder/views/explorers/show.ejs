@@ -1,0 +1,19 @@
+<%- include('../partials/header') %>
+<h1>all Explorers</h1>
+<div class="table-div ">
+<table>
+  <thead>
+    <th>Explorer's Name</th>
+    <th>Explorer's Age</th>
+  </thead>
+  <tbody>
+    <%explorers.forEach((e)=>{%>
+    <tr>
+      <td><%= e.name %></td>
+      <td><%= e.age %></td>
+    </tr>
+    <%})%>
+  </tbody>
+</table>
+</div>
+<%- include('../partials/footer') %>

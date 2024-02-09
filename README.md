@@ -1,6 +1,6 @@
 ##### Youtube video of the website: [planet Builder](https://youtu.be/mAQWi_DudFE?feature=shared)
 
-< img src="https://i.imgur.com/xXXnDGR.jpg" width="70%">
+<img src="https://i.imgur.com/xXXnDGR.jpg" width="70%">
  
 # Mongoose "Planet Builder" Lab - Part 1
 

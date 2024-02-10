@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <nav>
+    <a href="new">Add a new planets</a>
+
+    <a href="/planets">See all planets</a>
+  </nav>
+</head>
+
+<body>
+
+  <h2>Plants List</h2>
+
+  <table>
+    <thead>
+      <th>Name</th>
+      <th>climate</th>
+      <th>population</th>
+    </thead>
+    <tbody>
+
+
+      <tr>
+        <td>
+          <%= planets.name %>
+        </td>
+        <td>
+          <%= planets.climate %>
+        </td>
+        <td>
+          <%= planets.population %>
+        </td>
+      </tr>
+
+
+    </tbody>
+
+  </table>
+  <br><br><br>
+
+  <% if (planets.plants.length){ planets.plants.forEach(e=>{ %>
+    name: <%= e.name %>
+      <br>
+      color: <%= e.color %>
+        <br>
+        poisonous: <%= e.poisonous%>
+          <br><br>
+          <% }) %>
+
+            <% } else {%>
+              <p>No plants yet</p>
+              <%}%>
+
+                <br><br><br>
+                <form method="POST" action="/planets/<%= planets._id %>/plants">
+                  <label>name: <input type="text" name="name" id=""></label><br>
+                  <label>color: <input type="text" name="color" id=""></label> <br>
+                  <label>poisonous: <select name="poisonous" id="">
+                      <option value="true">true</option>
+                      <option value="false">false</option>
+                    </select>
+                  </label>
+
+                  <br>
+                  <input type="submit" value="Add Plants">
+                </form>
+
+
+
+
+                <!-- <p><%= planets.plants.length %></p> -->
+</body>
+
+</html>

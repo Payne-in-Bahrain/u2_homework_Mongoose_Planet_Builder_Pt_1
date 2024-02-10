@@ -7,7 +7,6 @@ require('dotenv').config();
 require('./config/database'); // database
 
 var indexRouter = require('./routes/index');
-// var usersRouter = require('./routes/users');
 var planetsRouter = require("./routes/planets")
 
 var app = express();

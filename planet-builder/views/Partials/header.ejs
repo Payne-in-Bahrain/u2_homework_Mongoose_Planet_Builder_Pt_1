@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <title><%= title %></title>
+</head>
+<body>
+  <nav>
+    <img src="/images/camera.svg">
+    <a href="/explorers/new"	<%- title === 'Add Explorer' ? 'class="active"' : '' %>>
+		Add Plant</a>
+    <a href="/planets/new" <%- title === 'Add Planet' ? 'class="active"' : '' %>>ADD Planet</a>
+    <a href="/planets" <%- title === 'All Planets' ? 'class="active"' : '' %>>ALL planets</a>
+  </nav>
+  <main>
+    <h1><%= title %></h1>

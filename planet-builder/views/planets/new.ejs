@@ -1,0 +1,18 @@
+<%- include("../partials/header") %>
+<h2>Enter a New Planet</h2>
+<form action="/planets" method="POST">
+  <label>Name:
+    <input type="text" name="name">
+  </label><br>
+  <label>size:
+    <input type="text" name="size">
+  </label><br>
+  <label>distanceFromSun: 
+    <input type="text" name="distanceFromSun">
+  </label><br>
+  <label>hasMoons:
+    <input type="checkbox" name="hasMoons" checked>
+  </label><br>
+  <button type="submit">Add Planet</button>
+</form>
+<%- include("../partials/footer") %>

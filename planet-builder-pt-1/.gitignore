@@ -1,0 +1,4 @@
+//I am the gitignore file
+
+.env
+node_modules 

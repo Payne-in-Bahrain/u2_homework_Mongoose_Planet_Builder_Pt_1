@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <nav>
+    <a href="planets/new">Add a new planets</a>
+
+    <a href="/planets">See all planets</a>
+    <a href="/explorers/new">Explorers</a>
+  </nav>
+</head>
+
+<body>
+
+  <h2>Plants List</h2>
+
+  <table>
+    <thead>
+      <th>Name</th>
+      <th>climate</th>
+      <th>population</th>
+    </thead>
+    <tbody>
+      <% planets.forEach((e)=>{ %>
+
+        <tr>
+          <td>
+        <a href="/planets/<%= e._id%>">  <%= e.name %> </a>
+          </td>
+        </tr>
+
+        <% }) %>
+    </tbody>
+  </table>
+
+
+</body>
+
+</html>

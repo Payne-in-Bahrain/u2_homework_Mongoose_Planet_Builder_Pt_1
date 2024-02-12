@@ -7,7 +7,7 @@ const create = async (req, res) => {
     // console.log('Planeta: ', planet);
 
     planet.plants.push(req.body)
-    console.log("bbbbbb", planet)
+   
     const updatedPlants = await planet.save()
     res.redirect(`/planets/${updatedPlants._id}`)
   } catch (err) {

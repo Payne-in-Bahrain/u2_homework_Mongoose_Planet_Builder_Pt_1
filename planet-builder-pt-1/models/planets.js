@@ -31,7 +31,8 @@ const plantSchema = new Schema(
       min: 0,
       max: 9999999,
     },
-    plants: [plantsSchema]
+    plants: [plantsSchema],
+    explorers: [{type: Schema.Types.ObjectId, ref: 'explorer'}]
   },
   {
     timestamps: true,

@@ -1,5 +1,5 @@
 const Planet = require("../models/planets")
-
+const explorer = require("../models/explorer")
 const newPlanet = (req, res) => {
   const title = "Add a Planet"
   res.render("planets/new", {
@@ -37,7 +37,9 @@ const index = async (req, res) => {
 
 const show = async (req, res) => {
   const planets = await Planet.findById(req.params.id)
-  console.log("aaaa",planets)
+const explorers= await explorer.find({})
+
+ 
   res.render("planets/show", { title: "abcd",planets: planets })
 }
 
